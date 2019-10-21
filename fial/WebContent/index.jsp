@@ -7,12 +7,13 @@
 </head>
 <%-- 
 	아이콘 사이트 : https://fontawesome.com/icons?d=gallery&m=free
+	
 kkk
 --%>
 
 
 
-<body class="index">
+<body class="container">
 	<%@include file="views/includes/header.jsp" %>
 
 	<div class="section">
