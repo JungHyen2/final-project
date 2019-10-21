@@ -60,6 +60,9 @@
 						</a>
 					</li>
 					<li class="nav-item">
+						<a class="nav-link" href="<%=conPath%>/views/board/list.jsp">Free Board</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link" href="<%=conPath%>/views/common/join.jsp">Join</a>
 					</li>
 					<li class="nav-item">
