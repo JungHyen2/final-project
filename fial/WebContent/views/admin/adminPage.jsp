@@ -182,6 +182,10 @@ $(document).ready(function(){
 <body class="profile" style="margin-bottom: 20px !important;">
 <%@include file="../includes/header.jsp" %>
 
+
+<!-- 테이블 : https://bootstrapbay.com/blog/day-9-bootstrap-4-tables-tutorial-and-examples/ -->
+
+
 	<div class="container">
 		<!-- 내 프로필 정보 -->
 		<div class="info">

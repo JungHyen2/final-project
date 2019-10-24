@@ -28,21 +28,24 @@
 			
 			<a class="navbar-brand d-flex align-items-center" href="<%=conPath %>">
 				<img src="<%=conPath %>/resources/assets/img/logo.svg" class="mr-2" height="30">
-				LazyKit
+				Stlye Blending
 			</a>
 
+			<%-- 
 			<!-- 검색창 -->
-			<div style="width: 500px; padding-left: 20px;">
-				<!-- 검색 아이콘 -->
+			<div style="width: 100px; padding-left: 10px;">
+				
 				<i class="fa fa-search" style="font-size: x-large; color: gray;"></i>
 				&nbsp;
 				<form action="nav_search.ca" method="get" style="display: inline;">
-					<input type="text" id="nav_search" name="nav_search" size="50px;"
+					<input type="text" id="nav_search" name="nav_search" size="20px;"
 						style="background: none; border: none; color: white;"
 						placeholder="친구  위치 브랜드별 검색">
 				</form>
 			</div>
-
+			--%>
+			
+			
 			<!-- 좁아질때 생기는 버튼 -->
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarNavDropdown-1"

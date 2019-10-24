@@ -9,7 +9,10 @@
 <body class="register">
 <%@include file="../includes/header.jsp" %>
 
-	<div class="container-fluid">
+
+	<div class="container">
+
+	<div class="container-fluid" style="margin-top: 100px;">
 		<div class="row">
 			<div class="col-12 col-md-4 offset-md-1">
 				<div class="register-form">
@@ -55,7 +58,7 @@
 	</div>
 
 
-
+	</div>
 
 
 
