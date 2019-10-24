@@ -15,15 +15,86 @@ kkk
 
 <body class="index">
 	<%@include file="views/includes/header.jsp" %>
-
+	
 	<div class="container eee">
-		<div class="jumbotron" style=" margin-top: 5rem!important" role="button">
-			<div class="col-md-8 offset-md-2">
-				<div class="header">
-					<h2>Cards</h2>
-					<p>The original structure for the Bootstrap 4 cards remains
-						intact. Lazy Kit brings more focus on them with the help of
-						shadows and hover events.</p>
+		<figure id="banner" style="margin-top: 90px;">
+			<img style="width: 1110px;"
+				src="https://s3.ap-northeast-2.amazonaws.com/camscon.seoul/banners/RpLp4rgnmfs8LTD1YZr5R6rn7vXbIM5l.jpeg"
+				data-url="https://camscon.kr/user/244723">
+		</figure>
+
+
+		<div class="row" style=" margin-top: 1rem!important">
+			<div class="col-3">
+				<div class="component">
+					<div class="card">
+						<div class="card-header">
+							<img class="card-img" src="<%=conPath %>/resources/assets/img/dog-2.jpg" alt="dog">
+						</div>
+						<div class="card-body">
+							<span class="badge badge-warning mb-2">Vacation</span>
+							<h4 class="card-title">Woof! How to find dog-friendly
+								beaches in Spain</h4>
+						</div>
+						<div class="card-footer">
+							<a href="#a" class="btn btn-outline-primary">Read More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-3">
+				<div class="component">
+									<div class="card">
+						<div class="card-header">
+							<img class="card-img" src="<%=conPath %>/resources/assets/img/dog-2.jpg" alt="dog">
+						</div>
+						<div class="card-body">
+							<span class="badge badge-warning mb-2">Vacation</span>
+							<h4 class="card-title">Woof! How to find dog-friendly
+								beaches in Spain</h4>
+	
+						</div>
+						<div class="card-footer">
+							<a href="#a" class="btn btn-outline-primary">Read More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="component">
+					<div class="card">
+						<div class="card-header">
+							<img class="card-img" src="<%=conPath %>/resources/assets/img/dog-2.jpg" alt="dog">
+						</div>
+						<div class="card-body">
+							<span class="badge badge-warning mb-2">Vacation</span>
+							<h4 class="card-title">Woof! How to find dog-friendly
+								beaches in Spain</h4>
+
+						</div>
+						<div class="card-footer">
+							<a href="#a" class="btn btn-outline-primary">Read More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="component">
+					<div class="card">
+						<div class="card-header">
+							<img class="card-img" src="<%=conPath %>/resources/assets/img/dog-2.jpg" alt="dog">
+						</div>
+						<div class="card-body">
+							<span class="badge badge-warning mb-2">Vacation</span>
+							<h4 class="card-title">Woof! How to find dog-friendly
+								beaches in Spain</h4>
+
+						</div>
+						<div class="card-footer">
+							<a href="#a" class="btn btn-outline-primary">Read More</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -221,7 +292,7 @@ $(window).scroll(function() {
       console.log(++page);
       //$("#ddd").append("<div class='row mt-3' style='border:1px solid black;'>");
       var dlendud=$('#ttt').clone();
-      dlendud.find('img').eq(0).attr('src','~~~"')
+   //   dlendud.find('img').eq(0).attr('src','~~~"')
       $('.eee').append('<div class="row mt-3">'+dlendud.html()+'</div>')
 
     }
