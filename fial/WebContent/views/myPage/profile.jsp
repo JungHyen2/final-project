@@ -25,34 +25,32 @@
 					<div class="d-flex flex-row align-items-start mt-3 mt-lg-0">
 						<!-- 닉네임 -->
 						<div class="name">
-							<h2 class="mb-0">Lorde</h2>
+							<h2 class="mb-0">닉네임</h2>
 						</div>
 						<!-- 팔로워버튼  -->
-						<a href="#a" class="btn btn-primary btn-pill btn-sm ml-3 mt-1">Follow</a>
+						<a href="#a" class="btn btn-primary btn-pill btn-sm ml-3 mt-1">팔로우</a>
 					</div>
 					<div class="stats d-flex flex-row align-items-center align-items-lg-start text-center text-lg-left">
 						<div class="posts ml-2 ml-lg-0">
 							<p class="lead">
-								<b>134</b> posts
+								<b>134</b> 게시물
 							</p>
 						</div>
 						<div class="posts">
 							<p class="lead">
-								<b>6.6m</b> followers
+								<b>6.6m</b> 팔로워
 							</p>
 						</div>
 						<div class="posts">
 							<p class="lead">
-								<b>201</b> following
+								<b>201</b> 팔로잉
 							</p>
 						</div>
 					</div>
 					<p class="lead mb-0 mt-2">
-						<b>Ella Yelich-O'Connor</b>
+						<b>이름?</b>
 					</p>
-					<p class="lead text-center text-lg-left">Let's let things come
-						out of the woodwork. I'll give you my best side, tell you all my
-						best lies. Yeah, awesome right?</p>
+					<p class="lead text-center text-lg-left">자기소개 내용</p>
 				</div>
 			</div>
 		</div>
@@ -63,19 +61,19 @@
 				<li class="nav-item">
 					<a class="nav-link active" data-toggle="tab" href="#photos"> 
 					<i class="fas fa-th"></i>
-						Photos
+						내 게시물
 					</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" data-toggle="tab" href="#saved"> 
-					<i class="far fa-bookmark"></i> 
-						Saved
+					<i class="far fa-heart"></i>
+						내 좋아요
 					</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" data-toggle="tab" href="#tagged"> 
 					<i class="far fa-id-badge"></i> 
-						Tagged
+						내 친구
 					</a>
 				</li>
 			</ul>

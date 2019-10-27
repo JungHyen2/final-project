@@ -12,38 +12,60 @@
 
 	<div class="container">
 
-	<div class="container-fluid" style="margin-top: 100px;">
+	<div class="container-fluid">
 		<div class="row">
+			<div class="col-12 col-md-6 offset-md-1 d-flex" style="margin-top: 80px;">
+				<div class="full-picture flex-grow-1"></div>
+			</div>
+			
 			<div class="col-12 col-md-4 offset-md-1">
 				<div class="register-form">
 					<div class="mb-5">
-						<h1>Register</h1>
-						<p class="lead">Create an account to start playing.</p>
+						<h1>회원가입</h1>
+						<p>계정을 만들어 스타일 블렌딩을 즐겨보세요.</p>
 					</div>
 					<form>
 						<div class="form-group">
-							<label for="exampleInputEmail1">Email address</label> <input
-								type="email" class="form-control" id="exampleInputEmail1"
+							<label for="email">Email address</label>
+							<input type="email" class="form-control" id="email" name="email"
 								aria-describedby="emailHelp" placeholder="Enter email">
-							<small id="emailHelp" class="form-text text-info">We'll
-								never share your email with anyone else.</small>
+							<small id="emailHelp" class="form-text text-success">사용가능한 이메일입니다</small>
 						</div>
 						<div class="form-group">
-							<label for="exampleInputPassword1">Password</label> <input
-								type="password" class="form-control" id="exampleInputPassword1"
+							<label for="nickname">Nickname</label>
+							<input type="text" class="form-control" id="nickname" name="nickname"
+								aria-describedby="nicknameHelp" placeholder="Enter nickname">
+							<small id="nicknameHelp" class="form-text text-danger">이미 사용중인 닉네임입니다</small>
+						</div>
+						<div class="form-group">
+							<label for="userPwd">Password</label>
+							<input type="password" class="form-control" id="userPwd" name="userPwd"
 								placeholder="Password">
+							<small id="passwordHelp" class="form-text text-danger">형식에 맞지 않습니다</small>
 						</div>
 						<div class="form-group">
-							<label for="exampleInputPassword1">Password Confirmation</label>
+							<label for="userPwd2">Password Confirmation</label>
 							<input type="password" class="form-control"
-								id="exampleInputPassword1" placeholder="Password">
+								id="userPwd2" name="userPwd2" placeholder="Password">
 						</div>
-						<div class="custom-control custom-checkbox my-4">
-							<input type="checkbox" class="custom-control-input"
-								id="customCheck2"> <label class="custom-control-label"
-								for="customCheck2">Remember me</label>
+						<div class="form-group custom-radio my-4">
+							<label for="exampleInputGender1">Gender</label><br>
+							<div align="center">
+								<div style="display:inline-block; margin-right:100px;">
+									<input type="radio" class="custom-control-input"
+										id="male" name="gender" value="M">
+									<label class="custom-control-label"
+										for="male">Male</label>
+								</div>
+								<div style="display:inline-block;">
+									<input type="radio" class="custom-control-input"
+										id="female" name="gender" value="F">
+									<label class="custom-control-label"
+										for="female">Female</label>
+								</div>
+							</div>
 						</div>
-						<button type="submit" class="btn btn-block btn-primary">Submit</button>
+						<button type="submit" class="btn btn-block btn-dark" style="height:50px;">회원가입</button>
 					</form>
 
 					<p class="small my-4 text-center">
@@ -51,9 +73,7 @@
 					</p>
 				</div>
 			</div>
-			<div class="col-12 col-md-6 offset-md-1 d-flex">
-				<div class="full-picture flex-grow-1"></div>
-			</div>
+			
 		</div>
 	</div>
 
