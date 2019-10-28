@@ -36,16 +36,19 @@
 				</div>
 				
 				<div style="margin-top:10px;">
-					<button type="button" class="form-control btn btn-dark btn-lg" style="height:50px;">로그인</button>
+					<button type="button" class="form-control btn btn-dark" style="height:50px;"><b>로그인</b></button>
 				</div>
-				<div style="margin-top:25px;">
-					<button type="button" class="form-control btn btn-warning">카카오톡 로그인</button>
-				</div>
-				<div style="margin-top:10px;">
-					<button type="button" class="form-control btn btn-info">페이스북 로그인</button>
+				<div style="margin-top:35px;">
+					<button type="button" class="form-control btn btn-warning"><b>카카오톡 로그인</b></button>
 				</div>
 				<div style="margin-top:10px;">
-					<button type="button" class="form-control btn btn-success">구글 로그인</button>
+					<button type="button" class="form-control btn btn-info"><b>페이스북 로그인</b></button>
+				</div>
+				<div style="margin-top:10px;">
+					<button type="button" class="form-control btn btn-danger"><b>구글 로그인</b></button>
+				</div>
+				<div style="margin-top:10px;">
+					<button type="button" class="form-control btn btn-success"><b>네이버 로그인</b></button>
 				</div>
 			</div>
 		</div>

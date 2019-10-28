@@ -48,28 +48,12 @@
 							<input type="password" class="form-control"
 								id="userPwd2" name="userPwd2" placeholder="Password">
 						</div>
-						<div class="form-group custom-radio my-4">
-							<label for="exampleInputGender1">Gender</label><br>
-							<div align="center">
-								<div style="display:inline-block; margin-right:100px;">
-									<input type="radio" class="custom-control-input"
-										id="male" name="gender" value="M">
-									<label class="custom-control-label"
-										for="male">Male</label>
-								</div>
-								<div style="display:inline-block;">
-									<input type="radio" class="custom-control-input"
-										id="female" name="gender" value="F">
-									<label class="custom-control-label"
-										for="female">Female</label>
-								</div>
-							</div>
-						</div>
-						<button type="submit" class="btn btn-block btn-dark" style="height:50px;">회원가입</button>
+						
+						<button type="submit" class="btn btn-block btn-dark" style="height:50px; margin-top:50px;">회원가입</button>
 					</form>
 
 					<p class="small my-4 text-center">
-						Already have an account? <a href="#a">Log in</a>.
+						Already have an account? <a href="#a">Sign In</a>
 					</p>
 				</div>
 			</div>
