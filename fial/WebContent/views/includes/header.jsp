@@ -7,7 +7,7 @@
 <html>
 <head>
  <meta charset="utf-8">
-    <title>Lazy - Bootstrap UI Kit</title>
+    <title>Style Blending</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="A new design system for developing with less effort.">
