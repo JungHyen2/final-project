@@ -42,25 +42,33 @@
 					<form class="form-inline" style="margin: none !improtant;">
 				
 					<!--  -->
-						<div class="form-group" >
-							<button type="button"  class="btn btn-dark">촬영위치</button>
-							<input type="text" class="form-control" id="email" placeholder="주소">
+						<div class="form-group" style="margin: auto;">
+							<label>촬영위치</label>
+							&nbsp;&nbsp;
+							<input type="text" class="form-control" id="add" name="add" size="30"
+									placeholder="주소">
+							&nbsp;&nbsp;
+							<button>주소찾기</button>
 						</div>
 					</form>
 					
 					<!-- 정보등록창 (카테고리 + 컬러 + 브랜드) -->
 					<div style="border: 1px solid black;">
 						<!-- 브랜드명 + 카테고리 -->
-						<form class="form-inline" style="margin: none !improtant;">
-							<div class="form-group" >
-								<button type="button"  class="btn btn-dark">브랜드</button>
-								<input type="text" id="brand" name="brand" placeholder="브랜드를 입력해주세요">
+						<form class="form-inline" style="margin: auto;">
+							<div class="form-group">
+								<label>브랜드</label>
+								&nbsp;&nbsp;
+								<input type="text" class="form-control" id="brand" name="brand" size="30"
+										placeholder="브랜드를 입력해주세요">
 							</div>
 						</form>
-						<form class="form-inline" style="margin: none !improtant;">
+						<br><br>
+						<form class="form-inline" style="margin: none !improtant; margin: auto;" >
 							<div class="form-group" >
 								<label>카테고리</label>
-								<select class="custom-select">
+								&nbsp;&nbsp;
+								<select class="custom-select" style="width: 300">
 									<option value="" disabled>상의</option>
 									<option value="">&nbsp;&nbsp;&nbsp; T-SHIRT</option>
 								</select>
