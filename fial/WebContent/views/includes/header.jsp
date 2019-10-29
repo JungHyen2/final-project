@@ -77,7 +77,7 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<%=conPath%>/views/myPage/profile.jsp">
+						<a class="nav-link" href="<%=conPath%>/views/style/insert.jsp">
 							<i class="fas fa-camera fa-lg" style="font-size: 25px;"></i>
 						</a>
 					</li>
