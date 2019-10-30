@@ -19,6 +19,82 @@
 		<link rel="stylesheet" href="<%=conPath %>/resources/assets/css/lazy.css">
 		<link rel="stylesheet" href="<%=conPath %>/resources/assets/css/demo.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	crossorigin="anonymous"></script>
+
+ <style>
+  .contact-title{
+    margin-bottom: 15px !important; 
+}
+.icons-container ul li {
+    display: inline-block;
+    width: 4.2em;
+    height: 4.2em;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 0.25em;
+    line-height: 3.5em;
+    color: #999;
+    transition: 1s 0s linear;
+    text-decoration: none;
+}
+
+.icon-list{
+    padding:0px;
+}
+
+#facebook-circle{
+    border:1px solid #3B5998;
+}
+#facebook-icon{
+    color:#3B5998;
+}
+#twitter-circle{
+    border:1px solid #42ACC4;
+}
+#twitter-icon{
+    color:#42ACC4;
+}
+
+#youtube-circle{
+    border:1px solid #E62117;
+}
+#youtube-icon{
+    color:#E62117;
+}
+#btn-send-message{
+    width: 100%;
+}
+
+.line-separator{
+    border-bottom:1px solid #CDC1C5;
+}
+.box-separator{
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.icon-separator{
+    border-bottom: 2px solid orange;
+}
+
+.modal-body{
+ }
+ 
+ .modal-body a:hover{ 
+ 	transform:scale(1.5);
+	transition:transform .5s;
+ 
+ }
+ .modal-body .btn{
+ 
+ 	padding:0px;
+ }
+ </style>
+  
+  
   </head>
 </head>
 <body>
@@ -31,19 +107,21 @@
 				Stlye Blending
 			</a>
 
-			<%-- 
+	
 			<!-- 검색창 -->
-			<div style="width: 100px; padding-left: 10px;">
+
+			<div style="width: 223px; padding-left: 10px;">
 				
 				<i class="fa fa-search" style="font-size: x-large; color: gray;"></i>
 				&nbsp;
+				
 				<form action="nav_search.ca" method="get" style="display: inline;">
 					<input type="text" id="nav_search" name="nav_search" size="20px;"
 						style="background: none; border: none; color: white;"
 						placeholder="친구  위치 브랜드별 검색">
 				</form>
 			</div>
-			--%>
+
 			
 			
 			<!-- 좁아질때 생기는 버튼 -->
@@ -58,12 +136,16 @@
 			<div class="collapse navbar-collapse text-center" id="navbarNavDropdown-1">
 				<ul class="navbar-nav ml-auto" style="margin-left: 10px;">
 					<li class="nav-item">
-						<a class="nav-link" href="#">
+						<a class="nav-link btn btn" data-toggle="modal" href="#exampleModal">
 							<i class="fas fa-sliders-h fa-lg"></i>
 						</a>
+
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="<%=conPath%>/views/board/list.jsp">Free Board</a>
+						<a class="nav-link" href="<%=conPath%>/views/board/list.jsp">Notice</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="<%=conPath%>/views/board/list.jsp">Free board</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="<%=conPath%>/views/common/join.jsp">Join</a>
@@ -81,11 +163,7 @@
 							<i class="fas fa-camera fa-lg" style="font-size: 25px;"></i>
 						</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<%=conPath%>/views/myPage/profile.jsp">
-							<i class="fas fa-user-circle fa-lg" style="font-size: 30px;"></i>
-						</a>
-					</li>
+
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle"
 							id="navbarDropdownMenuLink" data-toggle="dropdown"
@@ -126,10 +204,111 @@
 			</div>
 		</div>
 	</nav>
+	<div id="filter-drop"></div>
+	
+	
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
 
+            <div aria-labelledby="exampleModalLabel" class="modal fade" id="exampleModal" role="dialog" tabindex="-1">
+                <div class="modal-dialog" role="document" style="">
+						<div class="modal-content"
+							style="padding:0px;background-color: #000; background-color: rgba(93, 93, 93, .7); text-align: center;">
+							<div class="modal-header" style="padding-bottom:0px;">
+								<button aria-label="Close" class="close" data-dismiss="modal"
+									data-toggle="tooltip" title="Exit" type="button">
+									<span aria-hidden="true"> × </span>
+								</button>
+								<h4 class="modal-title" id="exampleModalLabel">
+									<i class="fa fa-envelope-o"> </i>
+								</h4>
+							</div>
+							<div class="modal-body row" style="padding-top:0px;">
+								<div class="col-3" >
+<!-- 								<a class="btn" href="index.jsp" id="man" onclick="man();">
+									<i class="fa fa-male fa-5x" aria-hidden="true"
+									aria-label="Close" class="close" data-dismiss="modal"
+				 					data-toggle="tooltip" title="Exit"></i>
+								</a> -->
+								<a class="btn" id="남자">
+								<i class="fa fa-male fa-5x"></i>
+								</a>	
+									<br /><br />
+									<p style="color:white;">남자</p>
+								</div>
+								<div class="col-3">
+								<!-- <a class="btn" href="">
+									<i class="fa fa-female fa-5x" aria-hidden="true"></i>
+								</a> -->
+									<a class="btn" id="여자"> <i
+										class="fa fa-female fa-5x"></i>
+									</a> <br /><br />
+									<p style="color:white;">여자</p>
+								</div>
+								<div class="col-3">
+								<a class="btn" id="전체">
+									<i class="fa fa-users fa-5x" aria-hidden="true"></i>
+								</a>
+									<br /><br />
+									<p style="color:white;">전체</p>
+								</div>
+								<div class="col-3">
+								<a class="btn" id="기타">
+									<i class="fa fa-ellipsis-h fa-5x" aria-hidden="true"></i>
+								</a>
+									<br /><br />
+									<p style="color:white;">기타</p>
+								</div>
+							
+							</div>
+							<div class="modal-footer inline" style="margin: auto; width:230px;">
+			=						<div class="col-6 pull-right">
+										<a onclick="reset();" style="text-decoration: none; color:white; cursor: pointer;">원래대로</a>
+									
+									</div>
+									<div class="col-6 pull-left">
+										<a onclick="select();" style="text-decoration: none; color:white; cursor: pointer;" data-dismiss="modal">적용</a>
+									</div>
+							</div>
 
+						</div>
+					</div>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- <script>
+var sel;
+$(document).on("click", ".btn", function(){
+	console.log("ddd");
+
+	$(".btn").children().removeAttr('style');
+	$(this).children().css('color','white');
+    sel = $(this).attr('id');
+});
+function reset(){
+	$(".btn").children().removeAttr('style');
+}
+function select(){
+	console.log(sel);
+	$.ajax({
+		url:"index.jsp",
+		data:sel,
+		success:function(){
+			man();
+			console.log("성공");
+		},
+		error:function(){
+			console.log("실패");	
+		}
+	});
+}
+</script> -->
  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="<%=conPath %>/resources/assets/vendor/jquery/jquery.min.js"></script>
     <script src="<%=conPath %>/resources/assets/vendor/popper/popper.min.js"></script>
