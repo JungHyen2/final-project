@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
 	String conPath = request.getContextPath();
 %>
@@ -13,108 +13,121 @@
     <meta name="description" content="A new design system for developing with less effort.">
     <meta name="author" content="BootstrapBay">
 
-    <link href="assets/img/favicon.ico" rel="icon" type="image/png">
-    
-    <link rel="stylesheet" href="<%=conPath %>/resources/assets/vendor/bootstrap/bootstrap.min.css">
-		<link rel="stylesheet" href="<%=conPath %>/resources/assets/css/lazy.css">
-		<link rel="stylesheet" href="<%=conPath %>/resources/assets/css/demo.css">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
- <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+<link rel="stylesheet"
+	href="<%=conPath %>/resources/assets/vendor/bootstrap/bootstrap.min.css">
+<link rel="stylesheet"
+	href="<%=conPath %>/resources/assets/css/lazy.css">
+<link rel="stylesheet"
+	href="<%=conPath %>/resources/assets/css/demo.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.6.0/css/all.css"
+	integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
 	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 	crossorigin="anonymous"></script>
 
- <style>
-  .contact-title{
-    margin-bottom: 15px !important; 
+<style>
+.contact-title {
+	margin-bottom: 15px !important;
 }
+
 .icons-container ul li {
-    display: inline-block;
-    width: 4.2em;
-    height: 4.2em;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 50%;
-    margin: 0.25em;
-    line-height: 3.5em;
-    color: #999;
-    transition: 1s 0s linear;
-    text-decoration: none;
+	display: inline-block;
+	width: 4.2em;
+	height: 4.2em;
+	border: 1px solid #ccc;
+	padding: 10px;
+	border-radius: 50%;
+	margin: 0.25em;
+	line-height: 3.5em;
+	color: #999;
+	transition: 1s 0s linear;
+	text-decoration: none;
 }
 
-.icon-list{
-    padding:0px;
+.icon-list {
+	padding: 0px;
 }
 
-#facebook-circle{
-    border:1px solid #3B5998;
-}
-#facebook-icon{
-    color:#3B5998;
-}
-#twitter-circle{
-    border:1px solid #42ACC4;
-}
-#twitter-icon{
-    color:#42ACC4;
+#facebook-circle {
+	border: 1px solid #3B5998;
 }
 
-#youtube-circle{
-    border:1px solid #E62117;
-}
-#youtube-icon{
-    color:#E62117;
-}
-#btn-send-message{
-    width: 100%;
+#facebook-icon {
+	color: #3B5998;
 }
 
-.line-separator{
-    border-bottom:1px solid #CDC1C5;
-}
-.box-separator{
-    margin-top: 20px;
-    padding-bottom: 20px;
+#twitter-circle {
+	border: 1px solid #42ACC4;
 }
 
-.icon-separator{
-    border-bottom: 2px solid orange;
+#twitter-icon {
+	color: #42ACC4;
 }
 
-.modal-body{
- }
- 
- .modal-body a:hover{ 
- 	transform:scale(1.5);
-	transition:transform .5s;
- 
- }
- .modal-body .btn{
- 
- 	padding:0px;
- }
- </style>
-  
-  
-  </head>
+#youtube-circle {
+	border: 1px solid #E62117;
+}
+
+#youtube-icon {
+	color: #E62117;
+}
+
+#btn-send-message {
+	width: 100%;
+}
+
+.line-separator {
+	border-bottom: 1px solid #CDC1C5;
+}
+
+.box-separator {
+	margin-top: 20px;
+	padding-bottom: 20px;
+}
+
+.icon-separator {
+	border-bottom: 2px solid orange;
+}
+
+.modal-body {
+	
+}
+
+.modal-body a:hover {
+	transform: scale(1.5);
+	transition: transform .5s;
+}
+
+.modal-body .btn {
+	padding: 0px;
+}
+
+</style>
+
+
+</head>
 </head>
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
 		<div class="container">
-			
-			<a class="navbar-brand d-flex align-items-center" href="<%=conPath %>">
-				<img src="<%=conPath %>/resources/assets/img/logo.svg" class="mr-2" height="30">
-				Stlye Blending
+
+			<a class="navbar-brand d-flex align-items-center"
+				href="<%=conPath %>"> <img
+				src="<%=conPath %>/resources/assets/img/logo.svg" class="mr-2"
+				height="30"> Stlye Blending
 			</a>
 
-	
+
 			<!-- 검색창 -->
 
-			<div style="width: 150px; padding-left: 10px;">
-				
+			<div style="width: 223px; padding-left: 10px;">
+
 				<i class="fa fa-search" style="font-size: x-large; color: gray;"></i>
 				&nbsp;
-				
+
 				<form action="nav_search.ca" method="get" style="display: inline;">
 					<input type="text" id="nav_search" name="nav_search" size="20px;"
 						style="background: none; border: none; color: white;"
@@ -122,8 +135,8 @@
 				</form>
 			</div>
 
-			
-			
+
+
 			<!-- 좁아질때 생기는 버튼 -->
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarNavDropdown-1"
@@ -131,52 +144,46 @@
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			
+
 			<!-- 메인 리스트 -->
-			<div class="collapse navbar-collapse text-center" id="navbarNavDropdown-1">
-				<ul class="navbar-nav ml-auto" style="margin: 0;">
-					<li class="nav-item">
-						<a class="nav-link btn btn" data-toggle="modal" href="#exampleModal">
-							<i class="fas fa-sliders-h fa-lg"></i>
-						</a>
+			<div class="collapse navbar-collapse text-center"
+				id="navbarNavDropdown-1">
+				<ul class="navbar-nav ml-auto" style="margin-left: 10px;">
+					<li class="nav-item"><a class="nav-link btn btn"
+						data-toggle="modal" href="#exampleModal"> <i
+							class="fas fa-sliders-h fa-lg"></i>
+					</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="<%=conPath%>/views/board/list.jsp">Notice</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="<%=conPath%>/views/board/list.jsp">Free board</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="<%=conPath%>/views/common/join.jsp">Join</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="<%=conPath%>/views/common/login.jsp">Sign In</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="<%=conPath%>/views/myPage/profile.jsp"> <i
+							class="far fa-bell fa-lg" style="font-size: 25px;"></i>
+					</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="<%=conPath%>/views/style/insert.jsp"> <i
+							class="fas fa-camera fa-lg" style="font-size: 25px;"></i>
+					</a></li>
 
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<%=conPath%>/views/board/list.jsp">Notice</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<%=conPath%>/views/board/list.jsp">Free board</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<%=conPath%>/views/common/join.jsp">Join</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<%=conPath%>/views/common/login.jsp">Sign In</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<%=conPath%>/views/myPage/profile.jsp">
-							<i class="far fa-bell fa-lg" style="font-size: 25px;"></i>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<%=conPath%>/views/style/insert.jsp">
-							<i class="fas fa-camera fa-lg" style="font-size: 25px;"></i>
-						</a>
-					</li>
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="fas fa-user-circle fa-lg" style="font-size: 30px;"></i>
+					</a>
+						<div class="dropdown-menu"
+							aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item"
+								href="<%=conPath%>/views/myPage/profile.jsp">myPage</a> <a
+								class="dropdown-item"
+								href="<%=conPath%>/views/admin/adminPage.jsp">adminPage</a> <a
+								class="dropdown-item" href="#">LogOut</a>
+						</div></li>
 
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle"
-							id="navbarDropdownMenuLink" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false"> 
-							<i class="fas fa-user-circle fa-lg" style="font-size: 30px;"></i> 
-						</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-							<a class="dropdown-item" href="<%=conPath%>/views/myPage/profile.jsp">myPage</a> 
-							<a class="dropdown-item" href="<%=conPath%>/views/admin/adminPage.jsp">adminPage</a> 
-							<a class="dropdown-item" href="#">LogOut</a> 
-						</div>
-					</li>
-				
 					<!-- <li class="nav-item active">
 						<a class="nav-link" href="#">Home
 							<span class="sr-only">(current)</span>
@@ -199,26 +206,26 @@
 							<a class="dropdown-item" href="#">Marketing</a>
 						</div>
 					</li> -->
-					
+
 				</ul>
 			</div>
 		</div>
 	</nav>
 	<div id="filter-drop"></div>
-	
-	
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-        </div>
-        <div class="col-md-4">
 
-            <div aria-labelledby="exampleModalLabel" class="modal fade" id="exampleModal" role="dialog" tabindex="-1">
-                <div class="modal-dialog" role="document" style="">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+
+				<div aria-labelledby="exampleModalLabel" class="modal fade"
+					id="exampleModal" role="dialog" tabindex="-1">
+					<div class="modal-dialog" role="document" style="">
 						<div class="modal-content"
-							style="padding:0px;background-color: #000; background-color: rgba(93, 93, 93, .7); text-align: center;">
-							<div class="modal-header" style="padding-bottom:0px;">
+							style="padding: 0px; background-color: #000; background-color: rgba(93, 93, 93, .7); text-align: center;">
+							<div class="modal-header" style="padding-bottom: 0px;">
 								<button aria-label="Close" class="close" data-dismiss="modal"
 									data-toggle="tooltip" title="Exit" type="button">
 									<span aria-hidden="true"> × </span>
@@ -227,62 +234,179 @@
 									<i class="fa fa-envelope-o"> </i>
 								</h4>
 							</div>
-							<div class="modal-body row" style="padding-top:0px;">
-								<div class="col-3" >
-<!-- 								<a class="btn" href="index.jsp" id="man" onclick="man();">
+							<div class="modal-body row" style="padding-top: 0px;">
+								<div class="col-3">
+									<!-- 								<a class="btn" href="index.jsp" id="man" onclick="man();">
 									<i class="fa fa-male fa-5x" aria-hidden="true"
 									aria-label="Close" class="close" data-dismiss="modal"
 				 					data-toggle="tooltip" title="Exit"></i>
 								</a> -->
-								<a class="btn" id="남자">
-								<i class="fa fa-male fa-5x"></i>
-								</a>	
-									<br /><br />
-									<p style="color:white;">남자</p>
+									<a class="btn b" id="남자"> <i class="fa fa-male fa-5x"></i>
+									</a> <br />
+									<br />
+									<p style="color: white; margin:0px;">남자</p>
 								</div>
 								<div class="col-3">
-								<!-- <a class="btn" href="">
+									<!-- <a class="btn" href="">
 									<i class="fa fa-female fa-5x" aria-hidden="true"></i>
 								</a> -->
-									<a class="btn" id="여자"> <i
-										class="fa fa-female fa-5x"></i>
-									</a> <br /><br />
-									<p style="color:white;">여자</p>
+									<a class="btn b" id="여자"> <i class="fa fa-female fa-5x"></i>
+									</a> <br />
+									<br />
+									<p style="color: white; margin:0px;">여자</p>
 								</div>
 								<div class="col-3">
-								<a class="btn" id="전체">
-									<i class="fa fa-users fa-5x" aria-hidden="true"></i>
-								</a>
-									<br /><br />
-									<p style="color:white;">전체</p>
+									<a class="btn b" id="전체"> <i class="fa fa-users fa-5x"
+										aria-hidden="true"></i>
+									</a> <br />
+									<br />
+									<p style="color: white; margin:0px;">전체</p>
 								</div>
 								<div class="col-3">
-								<a class="btn" id="기타">
-									<i class="fa fa-ellipsis-h fa-5x" aria-hidden="true"></i>
-								</a>
-									<br /><br />
-									<p style="color:white;">기타</p>
+									<a class="btn b" id="기타"> <i class="fa fa-ellipsis-h fa-5x"
+										aria-hidden="true"></i>
+									</a> <br />
+									<br />
+									<p style="color: white; margin:0px;">기타</p>
 								</div>
-							
+
 							</div>
-							<div class="modal-footer inline" style="margin: auto; width:230px;">
-			=						<div class="col-6 pull-right">
-										<a onclick="reset();" style="text-decoration: none; color:white; cursor: pointer;">원래대로</a>
-									
+					
+							<div style="border: 1px solid gray; width: 500px; margin-bottom:10px; "></div>		
+							
+							<div class="modal-body row" style="padding-top: 0px;">
+								<div class="btn col-2" style="padding:0px;">
+									<a id="red" class="btn bb"> <i class="fa fa-circle fa-5x"
+										aria-hidden="true" style="color: red; " id="red"></i>
+									</a> <br />
+									<br />
+									<p style="color: white;">Red</p>
+								</div>
+								<div class="col-2"  style="padding:0px;">
+									<a id="orange" class="btn bb"> <i class="fa fa-circle fa-5x"
+										aria-hidden="true" style="color: orange;" id="orange"></i>
+									</a> <br />
+									<br />
+									<p style="color: white;">Orange</p>
+								</div>
+								<div class="col-2"  style="padding:0px;">
+									<a id="yellow" class="btn bb"> <i class="fa fa-circle fa-5x"
+										aria-hidden="true" style="color: yellow;" id="yellow"></i>
+									</a> <br />
+									<br />
+									<p style="color: white;">Yellow</p>
+								</div>
+								<div class="col-2"  style="padding:0px;">
+									<a id="green" class="btn bb"> <i class="fa fa-circle fa-5x"
+										aria-hidden="true" style="color: green;" id="green"></i>
+									</a> <br />
+									<br />
+									<p style="color: white;">Green</p>
+								</div>
+								<div class="col-2"  style="padding:0px;">
+									<a id="blue" class="btn bb"> <i class="fa fa-circle fa-5x"
+										aria-hidden="true" style="color: blue;" id="blue"></i>
+									</a> <br />
+									<br />
+									<p style="color: white;">Blue</p>
+								</div>
+								<div class="col-2"  style="padding:0px;">
+									<a id="navy" class="btn bb"> <i class="fa fa-circle fa-5x"
+										aria-hidden="true" style="color: navy;" id="navy"></i>
+									</a> <br />
+									<br />
+									<p style="color: white;">Navy</p>
+								</div>
+
+
+							</div>
+							<div class="modal-body row" style="padding-top: 0px;">
+								<div class="col-2" style="padding:0px;">
+									<a id="Pupple" class="btn bb"> <i class="fa fa-circle fa-5x"
+										aria-hidden="true" style="color: black;" id="black"></i>
+									</a> <br />
+									<br />
+									<p style="color: white;  margin-bottom: 0px;">Black</p>
+								</div>
+								<div class="col-2"  style="padding:0px;">
+									<a id="white" class="btn bb"> <i class="fa fa-circle fa-5x"
+										aria-hidden="true" style="color: white;" id="white"></i>
+									</a> <br />
+									<br />
+									<p style="color: white; margin-bottom: 0px;">White</p>
+								</div>
+								<div class="col-2"  style="padding:0px;">
+									<a id="pink" class="btn bb"> <i class="fa fa-circle fa-5x"
+										aria-hidden="true" style="color: pink;" id="pink"></i>
+									</a> <br />
+									<br />
+									<p style="color: white; margin-bottom: 0px;">Pink</p>
+								</div>
+								<div class="col-2"  style="padding:0px;">
+									<a id="brown" class="btn bb"> <i class="fa fa-circle fa-5x"
+										aria-hidden="true" style="color: brown;" id="brown"></i>
+									</a> <br />
+									<br />
+									<p style="color: white; margin-bottom: 0px;">Brown</p>
+								</div>
+								<div class="col-2"  style="padding:0px;">
+									<a id="beige" class="btn bb"> <i class="fa fa-circle fa-5x"
+										aria-hidden="true" style="color: beige;" id="beige"></i>
+									</a> <br />
+									<br />
+									<p style="color: white; margin-bottom: 0px;">Beige</p>
+								</div>
+								<div class="col-2"  style="padding:0px;">
+									<a id="aqua" class="btn bb"> <i class="fa fa-circle fa-5x"
+										aria-hidden="true" style="color: aqua;" id="aqua"></i>
+									</a> <br />
+									<br />
+									<p style="color: white; margin-bottom: 0px;">Aqua</p>
+								</div>
+								<div id="selectColor"></div>		
+							
+								<div class="modal-body form-row" style="padding:0px;">
+									<div class="form-group col-sm-12">
+										<label for="">Category</label> <select name="category" id="category"
+											class="form-control">
+											<option value="T-SHIRT" selected="selected">T-SHIRT</option>
+											<option value="SWEATSHIRT">SWEATSHIRT</option>
+											<option value="SHIRT">SHIRT</option>
+											<option value="BRAZER">BRAZER</option>
+											<option value="JACKET">JACKET</option>
+											<option value="JACKET">JACKET</option>
+											<option value="JACKET">JACKET</option>
+										</select>
 									</div>
-									<div class="col-6 pull-left">
-										<a onclick="select();" style="text-decoration: none; color:white; cursor: pointer;" data-dismiss="modal">적용</a>
-									</div>
+
+								</div>
+
+							</div>
+							
+
+							<div class="modal-footer inline"
+								style="margin: auto; width: 230px;">
+								=
+								<div class="col-6 pull-right">
+									<a onclick="reset();"
+										style="text-decoration: none; color: white; cursor: pointer;">원래대로</a>
+
+								</div>
+								<div class="col-6 pull-left">
+									<a onclick="select();"
+										style="text-decoration: none; color: white; cursor: pointer;"
+										data-dismiss="modal">적용</a>
+								</div>
 							</div>
 
 						</div>
 					</div>
-            </div>
-        </div>
-    </div>
-</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-<!-- <script>
+	<!-- <script>
 var sel;
 $(document).on("click", ".btn", function(){
 	console.log("ddd");
@@ -309,14 +433,17 @@ function select(){
 	});
 }
 </script> -->
- <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="<%=conPath %>/resources/assets/vendor/jquery/jquery.min.js"></script>
-    <script src="<%=conPath %>/resources/assets/vendor/popper/popper.min.js"></script>
-    <script src="<%=conPath %>/resources/assets/vendor/bootstrap/bootstrap.min.js" ></script>
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script
+		src="<%=conPath %>/resources/assets/vendor/jquery/jquery.min.js"></script>
+	<script
+		src="<%=conPath %>/resources/assets/vendor/popper/popper.min.js"></script>
+	<script
+		src="<%=conPath %>/resources/assets/vendor/bootstrap/bootstrap.min.js"></script>
 
-    <!-- optional plugins -->
-    <script src="<%=conPath %>//resources/assets/vendor/nouislider/js/nouislider.min.js"></script>
+	<!-- optional plugins -->
+	<script
+		src="<%=conPath %>//resources/assets/vendor/nouislider/js/nouislider.min.js"></script>
 
-    <!--   lazy javascript -->
-    <script src="<%=conPath %>//resources/assets/js/lazy.js"></script>
-    
+	<!--   lazy javascript -->
+	<script src="<%=conPath %>//resources/assets/js/lazy.js"></script>
