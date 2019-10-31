@@ -4,113 +4,239 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+	.map_wrap, .map_wrap * {
+		margin: 0;
+		padding: 0;
+		font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
+		font-size: 12px;
+	}
+	
+	.map_wrap a, .map_wrap a:hover, .map_wrap a:active {
+		color: #000;
+		text-decoration: none;
+	}
+	
+	.map_wrap {
+		position: relative;
+		width: 100%;
+		height: 500px;
+	}
+	
+	#menu_wrap {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 250px;
+		margin: 10px 0 30px 10px;
+		padding: 5px;
+		overflow-y: auto;
+		background: rgba(255, 255, 255, 0.7);
+		z-index: 1;
+		font-size: 12px;
+		border-radius: 10px;
+	}
+	
+	.bg_white {
+		background: #fff;
+	}
+	
+	#menu_wrap hr {
+		display: block;
+		height: 1px;
+		border: 0;
+		border-top: 2px solid #5F5F5F;
+		margin: 3px 0;
+	}
+	
+	#menu_wrap .option {
+		text-align: center;
+	}
+	
+	#menu_wrap .option p {
+		margin: 10px 0;
+	}
+	
+	#menu_wrap .option button {
+		margin-left: 5px;
+	}
+	
+	#placesList li {
+		list-style: none;
+	}
+	
+	#placesList .item {
+		position: relative;
+		border-bottom: 1px solid #888;
+		overflow: hidden;
+		cursor: pointer;
+		min-height: 65px;
+	}
+	
+	#placesList .item span {
+		display: block;
+		margin-top: 4px;
+	}
+	
+	#placesList .item h5, #placesList .item .info {
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	
+	#placesList .item .info {
+		padding: 10px 0 10px 55px;
+	}
+	
+	#placesList .info .gray {
+		color: #8a8a8a;
+	}
+	
+	#placesList .info .jibun {
+		padding-left: 26px;
+		background:
+			url(http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png)
+			no-repeat;
+	}
+	
+	#placesList .info .tel {
+		color: #009900;
+	}
+	
+	#placesList .item .markerbg {
+		float: left;
+		position: absolute;
+		width: 36px;
+		height: 37px;
+		margin: 10px 0 0 10px;
+		background:
+			url(http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png)
+			no-repeat;
+	}
+	
+	#placesList .item .marker_1 {
+		background-position: 0 -10px;
+	}
+	
+	#placesList .item .marker_2 {
+		background-position: 0 -56px;
+	}
+	
+	#placesList .item .marker_3 {
+		background-position: 0 -102px
+	}
+	
+	#placesList .item .marker_4 {
+		background-position: 0 -148px;
+	}
+	
+	#placesList .item .marker_5 {
+		background-position: 0 -194px;
+	}
+	
+	#placesList .item .marker_6 {
+		background-position: 0 -240px;
+	}
+	
+	#placesList .item .marker_7 {
+		background-position: 0 -286px;
+	}
+	
+	#placesList .item .marker_8 {
+		background-position: 0 -332px;
+	}
+	
+	#placesList .item .marker_9 {
+		background-position: 0 -378px;
+	}
+	
+	#placesList .item .marker_10 {
+		background-position: 0 -423px;
+	}
+	
+	#placesList .item .marker_11 {
+		background-position: 0 -470px;
+	}
+	
+	#placesList .item .marker_12 {
+		background-position: 0 -516px;
+	}
+	
+	#placesList .item .marker_13 {
+		background-position: 0 -562px;
+	}
+	
+	#placesList .item .marker_14 {
+		background-position: 0 -608px;
+	}
+	
+	#placesList .item .marker_15 {
+		background-position: 0 -654px;
+	}
+	
+	#pagination {
+		margin: 10px auto;
+		text-align: center;
+	}
+	
+	#pagination a {
+		display: inline-block;
+		margin-right: 10px;
+	}
+	
+	#pagination .on {
+		font-weight: bold;
+		cursor: default;
+		color: #777;
+	}
+
+	/* 모달 */
+	/* The Modal (background) */
+	.modal {
+		display: none; /* Hidden by default */
+		position: fixed; /* Stay in place */
+		z-index: 1; /* Sit on top */
+		padding-top: 100px; /* Location of the box */
+		left: 0;
+		top: 0;
+		width: 100%; /* Full width */
+		height: 100%; /* Full height */
+		overflow: auto; /* Enable scroll if needed */
+		background-color: rgb(0, 0, 0); /* Fallback color */
+		background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+	}
+	
+	/* Modal Content */
+	.modalContent {
+		background-color: #fefefe;
+		margin: auto;
+		padding: 20px;
+		border: 1px solid #888;
+		border-radius: 5px;
+		width: 80%;
+	}
+	
+
+
+</style>
 </head>
 <body class="profile" style="margin-bottom: 20px !important;">
 	
 	<%@include file="../includes/header.jsp" %>
 
-<!-- 	<div class="container">
-		<div  align="center" style="margin: 20px;">
-			<div class="info">
-				<div class="row">
-				
-				</div>
-			</div>
-	
-			<div class="row" style="margin-right: 100px; margin-left: 100px;">
-				왼쪽
-				<div class="col-6">
-					이미지 등록
-					<div class="input-group" style="border: 1px solid gray; margin: auto; height: 500px;">
-						<input type="file">
-					</div>
-					&nbsp;&nbsp;
-					#
-					<div>
-						<button id="_daily">#데일리룩</button>
-						<button>#</button>
-					</div>
-					&nbsp;&nbsp;
-					컨텐츠
-					<div>
-						<textarea class="form-control" rows="7" placeholder="사진에 대한 내용과 #해시태그는 이곳에 적어주세요"></textarea>
-					</div>
-				</div>
-				오른쪽
-				<div class="col-6">
-					찍은위치
-					<form class="form-inline" style="margin: none !improtant;">
-				
-					
-						<div class="form-group" style="margin: auto;">
-							<label>촬영위치</label>
-							&nbsp;&nbsp;
-							<input type="text" class="form-control" id="add" name="add" size="30"
-									placeholder="주소">
-							&nbsp;&nbsp;
-							<button>주소찾기</button>
-						</div>
-					</form>
-					
-					정보등록창 (카테고리 + 컬러 + 브랜드)
-					<div style="border: 1px solid black;">
-						브랜드명 + 카테고리
-						<form class="form-inline" style="margin: auto;">
-							<div class="form-group">
-								<label>브랜드</label>
-								&nbsp;&nbsp;
-								<input type="text" class="form-control" id="brand" name="brand" size="30"
-										placeholder="브랜드를 입력해주세요">
-							</div>
-						</form>
-						<br><br>
-						<form class="form-inline" style="margin: none !improtant; margin: auto;" >
-							<div class="form-group" >
-								<label>카테고리</label>
-								&nbsp;&nbsp;
-								<select class="custom-select" style="width: 300">
-									<option value="" disabled>상의</option>
-									<option value="">&nbsp;&nbsp;&nbsp; T-SHIRT</option>
-								</select>
-							</div>
-						</form>
-						<div>
-						
-							
-						</div>
-						컬러
-						<div>
-							
-						</div>
-					</div>
-				</div>
-				
-			</div>
-		</div>container end
-
-
-
-	</div> -->
-	
-	
 	<!-- Page Content -->
 	<div class="container" style="margin-top: 150px; margin-bottom: 70px;">
 
 		<div class="row">
 
-			<!-- Post Content Column -->
+			<!-- 왼쪽 -->
 			<div class="col-lg-7">
 
 				<!-- Title -->
-				<h1 class="mt-4">Style Posting</h1>
-				<!-- Author -->
-				<p class="lead">
-					by <a href="#">Style Blending</a>
-				</p>
+				<h1 class="mt-4">Posting</h1>
 
 				<hr>
-				<br><br>
-				
 				<!-- 이미지 -->
 				<div>
 					<img class="img-fluid rounded" src="http://placehold.it/500x600" alt="">
@@ -202,92 +328,44 @@
 
 			<!-- 오른쪽 -->
 			<div class="col-md-5">
-			
-				<!-- 1. 작성자 정보 -->
-				<div class="card my-4" style="padding: 10px;">
-					<!-- 작성자 프로필 -->
-					<div class="media mb-4" style="margin: 0 !important;">
-						<!-- 이미지 -->
-						<img class="d-flex mr-3 rounded-circle"
-							src="http://placehold.it/60x60" alt="">
-						<!-- 정보 -->
-						<div class="media-body">
-							<div >
-								<!-- 닉네임 -->
-								<h6 style="display: inline-block;">닉네임</h6>
-								<!-- 팬추가 버튼 -->
-								<button type="button" class="btn btn-dark btn-sm" 
-										style="float: right; margin-right: 20px;">+ fan</button>
+				<!-- 1. 성별 -->
+				<div class="card my-4">
+					<div class="card-body" style="display: inline-block;">
+						<h5 style="display: inline-block; padding-top: 8px; margin-bottom: 0;">성별</h5> &nbsp;&nbsp;
+						<form class="form-group" style="display: inline-block;">
+							<div class="custom-control custom-radio my-2" style="padding-top: 0 !important; display: inline-block;">
+								<input type="radio" id="men" name="gender" value="men" class="custom-control-input" checked> 
+								<label class="custom-control-label" for="men">남자</label>
 							</div>
-							<div>
-								<!-- 자기소개 -->
-								<p>안녕하세요~</p>
+							<div class="custom-control custom-radio my-2" style="padding-top: 0 !important; display: inline-block;">
+								<input type="radio" id="woman" name="gender" value="woman" class="custom-control-input"> 
+								<label class="custom-control-label" for="woman">여자</label>
 							</div>
-							
-						</div>
+						</form>
 					</div>
 				</div>
 				
-				<!-- 2. 코디 정보 -->
+				<!-- 2. 위치선택 -->
 				<div class="card my-4">
-					<h5 class="card-header">Clothes stylist</h5>
-					<div class="card-body">
-						코디정보
-					</div>
-				</div>
-				
-				<!-- 3. 촬영위치(지도api) -->
-				<div class="card my-4">
-					<h5 class="card-header">Location</h5>
-					<div class="card-body">
-						지도
-					</div>
-				</div>
-				
-				
-				<!-- Search Widget -->
-				<div class="card my-4">
-					<h5 class="card-header">Search</h5>
+					<h5 class="card-header">촬영 위치</h5>
 					<div class="card-body">
 						<div class="input-group">
-							<input type="text" class="form-control"
-								placeholder="Search for..."> <span
-								class="input-group-btn">
-								<button class="btn btn-secondary" type="button">Go!</button>
-							</span>
+							<!-- 주소 담길 text  -->
+							<input type="text" class="form-control" name="add" id="add"> 
+							<!-- 지도버튼  -->
+							<button type="button" class="btn btn-info" data-toggle="modal" id="addOpenBtn" data-target="#addModal">지도</button>
 						</div>
 					</div>
 				</div>
-
-				<!-- Categories Widget -->
-				<div class="card my-4">
-					<h5 class="card-header">Categories</h5>
-					<div class="card-body">
-						<div class="row">
-							<div class="col-lg-6">
-								<ul class="list-unstyled mb-0">
-									<li><a href="#">Web Design</a></li>
-									<li><a href="#">HTML</a></li>
-									<li><a href="#">Freebies</a></li>
-								</ul>
-							</div>
-							<div class="col-lg-6">
-								<ul class="list-unstyled mb-0">
-									<li><a href="#">JavaScript</a></li>
-									<li><a href="#">CSS</a></li>
-									<li><a href="#">Tutorials</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-
+			
+			
 				<!-- Side Widget -->
 				<div class="card my-4">
-					<h5 class="card-header">Side Widget</h5>
-					<div class="card-body">You can put anything you want inside
-						of these side widgets. They are easy to use, and feature the new
-						Bootstrap 4 card containers!</div>
+					<h5 class="card-header">스타일 정보</h5>
+					<div class="card-body">
+						
+					</div>
+
 				</div>
 
 			</div>
@@ -297,8 +375,300 @@
 
 	</div>
 	<!-- /.container -->
+	
+	
+	<!----------------------------------------------------- 지도 modal ----------------------------------------------->
 
+	<div class="modal fade" id="addModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="width: 800px; height: 800px;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<!-- <h5 class="modal-title" id="exampleModalLabel">Here is a modal</h5> -->
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<!-- 지도api -->
+					<div class="map_wrap">
+						<div id="map"
+							style="width: 100%; height: 100%; position: relative; overflow: hidden;"></div>
 
+						<div id="menu_wrap" class="bg_white">
+							<div class="option">
+								<div>
+									<form onsubmit="searchPlaces(); return false;">
+										키워드 : <input type="text" value="" id="keyword" size="15">
+										<button type="submit">검색하기</button>
+									</form>
+								</div>
+							</div>
+							<hr>
+							<ul id="placesList"></ul>
+							<div id="pagination"></div>
+						</div>
+					</div>
+					<!-- 지도api end -->
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-success" id="addSelectBtn">확인</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8ef4b8fd4aebaa69e9172f4cc49921ca&libraries=services"></script>
+	<script>
+		$("#addSelectBtn").click(function () {
+			$('#addModal').modal("hide");
+		});
+	</script>
+	
+	<script>
+		// 마커를 담을 배열입니다
+		kakao.maps.disableHD();
+		
+		var markers = [];
+		var map;
+		
+		setTimeout(function(){ 
+			map.relayout(); }, 0.01
+		);
+
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		mapOption = {
+			center : new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+			level : 3
+		// 지도의 확대 레벨
+		};
+
+		// 지도를 생성합니다    
+		map = new kakao.maps.Map(mapContainer, mapOption);
+
+		// 장소 검색 객체를 생성합니다
+		var ps = new kakao.maps.services.Places();
+
+		// 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
+		var infowindow = new kakao.maps.InfoWindow({
+			zIndex : 1
+		});
+
+		// 키워드로 장소를 검색합니다
+		searchPlaces();
+
+		// 키워드 검색을 요청하는 함수입니다
+		function searchPlaces() {
+
+			var keyword = document.getElementById('keyword').value;
+
+			if (!keyword.replace(/^\s+|\s+$/g, '')) {
+				//alert('키워드를 입력해주세요!');
+				return false;
+			}
+
+			// 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+			ps.keywordSearch(keyword, placesSearchCB);
+		}
+
+		// 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
+		function placesSearchCB(data, status, pagination) {
+			if (status === kakao.maps.services.Status.OK) {
+
+				// 정상적으로 검색이 완료됐으면
+				// 검색 목록과 마커를 표출합니다
+				displayPlaces(data);
+
+				// 페이지 번호를 표출합니다
+				displayPagination(pagination);
+				
+				console.log(data);
+				
+				$("#placesList li").click(function () {
+					var add = $(this).children('.info').children().eq(1).text();
+					
+					console.log(this);
+					console.log(add);
+					$("#add").val(add);
+				});
+				
+				
+				
+
+			} else if (status === kakao.maps.services.Status.ZERO_RESULT) {
+
+				alert('검색 결과가 존재하지 않습니다.');
+				return;
+
+			} else if (status === kakao.maps.services.Status.ERROR) {
+
+				alert('검색 결과 중 오류가 발생했습니다.');
+				return;
+
+			}
+		}
+
+		// 검색 결과 목록과 마커를 표출하는 함수입니다
+		function displayPlaces(places) {
+
+			var listEl = document.getElementById('placesList'), menuEl = document
+					.getElementById('menu_wrap'), fragment = document
+					.createDocumentFragment(), bounds = new kakao.maps.LatLngBounds(), listStr = '';
+
+			// 검색 결과 목록에 추가된 항목들을 제거합니다
+			removeAllChildNods(listEl);
+
+			// 지도에 표시되고 있는 마커를 제거합니다
+			removeMarker();
+
+			for (var i = 0; i < places.length; i++) {
+
+				// 마커를 생성하고 지도에 표시합니다
+				var placePosition = new kakao.maps.LatLng(places[i].y,
+						places[i].x), marker = addMarker(placePosition, i), itemEl = getListItem(
+						i, places[i]); // 검색 결과 항목 Element를 생성합니다
+
+				// 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+				// LatLngBounds 객체에 좌표를 추가합니다
+				bounds.extend(placePosition);
+
+				// 마커와 검색결과 항목에 mouseover 했을때
+				// 해당 장소에 인포윈도우에 장소명을 표시합니다
+				// mouseout 했을 때는 인포윈도우를 닫습니다
+				(function(marker, title) {
+					kakao.maps.event.addListener(marker, 'mouseover',
+							function() {
+								displayInfowindow(marker, title);
+							});
+
+					kakao.maps.event.addListener(marker, 'mouseout',
+							function() {
+								infowindow.close();
+							});
+
+					itemEl.onmouseover = function() {
+						displayInfowindow(marker, title);
+					};
+
+					itemEl.onmouseout = function() {
+						infowindow.close();
+					};
+				})(marker, places[i].place_name);
+
+				fragment.appendChild(itemEl);
+			}
+
+			// 검색결과 항목들을 검색결과 목록 Elemnet에 추가합니다
+			listEl.appendChild(fragment);
+			menuEl.scrollTop = 0;
+
+			// 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+			map.setBounds(bounds);
+		}
+
+		// 검색결과 항목을 Element로 반환하는 함수입니다
+		function getListItem(index, places) {
+
+			var el = document.createElement('li'), itemStr = '<span class="markerbg marker_'
+					+ (index + 1)
+					+ '"></span>'
+					+ '<div class="info">'
+					+ '   <h5>' + places.place_name + '</h5>';
+
+			if (places.road_address_name) {
+				itemStr += '    <span>' + places.road_address_name + '</span>'
+						+ '   <span class="jibun gray">' + places.address_name
+						+ '</span>';
+			} else {
+				itemStr += '    <span>' + places.address_name + '</span>';
+			}
+
+			itemStr += '  <span class="tel">' + places.phone + '</span>'
+					+ '</div>';
+
+			el.innerHTML = itemStr;
+			el.className = 'item';
+
+			return el;
+		}
+
+		// 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
+		function addMarker(position, idx, title) {
+			
+			var imageSrc = 'http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png', // 마커 이미지 url, 스프라이트 이미지를 씁니다
+			imageSize = new kakao.maps.Size(36, 37), // 마커 이미지의 크기
+			imgOptions = {
+				spriteSize : new kakao.maps.Size(36, 691), // 스프라이트 이미지의 크기
+				spriteOrigin : new kakao.maps.Point(0, (idx * 46) + 10), // 스프라이트 이미지 중 사용할 영역의 좌상단 좌표
+				offset : new kakao.maps.Point(13, 37)
+			// 마커 좌표에 일치시킬 이미지 내에서의 좌표
+			}, markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize,
+					imgOptions), marker = new kakao.maps.Marker({
+				position : position, // 마커의 위치
+				image : markerImage
+			});
+
+			marker.setMap(map); // 지도 위에 마커를 표출합니다
+			markers.push(marker); // 배열에 생성된 마커를 추가합니다
+
+			return marker;
+		}
+
+		// 지도 위에 표시되고 있는 마커를 모두 제거합니다
+		function removeMarker() {
+			for (var i = 0; i < markers.length; i++) {
+				markers[i].setMap(null);
+			}
+			markers = [];
+		}
+
+		// 검색결과 목록 하단에 페이지번호를 표시는 함수입니다
+		function displayPagination(pagination) {
+			var paginationEl = document.getElementById('pagination'), fragment = document
+					.createDocumentFragment(), i;
+
+			// 기존에 추가된 페이지번호를 삭제합니다
+			while (paginationEl.hasChildNodes()) {
+				paginationEl.removeChild(paginationEl.lastChild);
+			}
+
+			for (i = 1; i <= pagination.last; i++) {
+				var el = document.createElement('a');
+				el.href = "#";
+				el.innerHTML = i;
+
+				if (i === pagination.current) {
+					el.className = 'on';
+				} else {
+					el.onclick = (function(i) {
+						return function() {
+							pagination.gotoPage(i);
+						}
+					})(i);
+				}
+
+				fragment.appendChild(el);
+			}
+			paginationEl.appendChild(fragment);
+		}
+
+		// 검색결과 목록 또는 마커를 클릭했을 때 호출되는 함수입니다
+		// 인포윈도우에 장소명을 표시합니다
+		function displayInfowindow(marker, title) {
+			var content = '<div style="padding:5px;z-index:1;">' + title
+					+ '</div>';
+
+			infowindow.setContent(content);
+			infowindow.open(map, marker);
+		}
+
+		// 검색결과 목록의 자식 Element를 제거하는 함수입니다
+		function removeAllChildNods(el) {
+			while (el.hasChildNodes()) {
+				el.removeChild(el.lastChild);
+			}
+		}
+	</script>
+	
 	<%@include file="../includes/footer.jsp" %>
 	
 </body>
