@@ -110,7 +110,7 @@
 	
 			<!-- 검색창 -->
 
-			<div style="width: 223px; padding-left: 10px;">
+			<div style="width: 150px; padding-left: 10px;">
 				
 				<i class="fa fa-search" style="font-size: x-large; color: gray;"></i>
 				&nbsp;
@@ -134,7 +134,7 @@
 			
 			<!-- 메인 리스트 -->
 			<div class="collapse navbar-collapse text-center" id="navbarNavDropdown-1">
-				<ul class="navbar-nav ml-auto" style="margin-left: 10px;">
+				<ul class="navbar-nav ml-auto" style="margin: 0;">
 					<li class="nav-item">
 						<a class="nav-link btn btn" data-toggle="modal" href="#exampleModal">
 							<i class="fas fa-sliders-h fa-lg"></i>
