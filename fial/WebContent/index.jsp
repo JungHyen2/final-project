@@ -14,7 +14,7 @@
 @charset "EUC-KR";
 @import url(https://fonts.googleapis.com/earlyaccess/jejugothic.css);
 @import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-/* p{
+/* /* p{
 	font-family: 'Jeju Gothic';
 } */
 p{
@@ -27,7 +27,7 @@ body{
 p{
 	margin:0px;
 
-}
+} */
 .imggg{
     background-size: cover;
     background-position: center center;

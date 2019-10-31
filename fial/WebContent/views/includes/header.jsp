@@ -129,8 +129,13 @@
 
 			<!-- 검색창 -->
 
+<<<<<<< HEAD
 			<div style="width: 223px; padding-left: 10px;">
 
+=======
+			<div style="width: 150px; padding-left: 10px;">
+				
+>>>>>>> branch 'dev' of https://github.com/yeen2/final_templet.git
 				<i class="fa fa-search" style="font-size: x-large; color: gray;"></i>
 				&nbsp;
 
@@ -152,6 +157,7 @@
 			</button>
 
 			<!-- 메인 리스트 -->
+<<<<<<< HEAD
 			<div class="collapse navbar-collapse text-center"
 				id="navbarNavDropdown-1">
 				<ul class="navbar-nav ml-auto" style="margin-left: 10px;">
@@ -175,6 +181,14 @@
 						href="<%=conPath%>/views/style/insert.jsp"> <i
 							class="fas fa-camera fa-lg" style="font-size: 25px;"></i>
 					</a></li>
+=======
+			<div class="collapse navbar-collapse text-center" id="navbarNavDropdown-1">
+				<ul class="navbar-nav ml-auto" style="margin: 0;">
+					<li class="nav-item">
+						<a class="nav-link btn btn" data-toggle="modal" href="#exampleModal">
+							<i class="fas fa-sliders-h fa-lg"></i>
+						</a>
+>>>>>>> branch 'dev' of https://github.com/yeen2/final_templet.git
 
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
