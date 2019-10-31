@@ -6,18 +6,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Style Blending</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="description"
-	content="A new design system for developing with less effort.">
-<meta name="author" content="BootstrapBay">
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<link href="assets/img/favicon.ico" rel="icon" type="image/png">
+ <meta charset="utf-8">
+    <title>Style Blending</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="A new design system for developing with less effort.">
+    <meta name="author" content="BootstrapBay">
 
 <link rel="stylesheet"
 	href="<%=conPath %>/resources/assets/vendor/bootstrap/bootstrap.min.css">
@@ -129,13 +123,8 @@
 
 			<!-- 검색창 -->
 
-<<<<<<< HEAD
 			<div style="width: 223px; padding-left: 10px;">
 
-=======
-			<div style="width: 150px; padding-left: 10px;">
-				
->>>>>>> branch 'dev' of https://github.com/yeen2/final_templet.git
 				<i class="fa fa-search" style="font-size: x-large; color: gray;"></i>
 				&nbsp;
 
@@ -157,7 +146,6 @@
 			</button>
 
 			<!-- 메인 리스트 -->
-<<<<<<< HEAD
 			<div class="collapse navbar-collapse text-center"
 				id="navbarNavDropdown-1">
 				<ul class="navbar-nav ml-auto" style="margin-left: 10px;">
@@ -181,14 +169,6 @@
 						href="<%=conPath%>/views/style/insert.jsp"> <i
 							class="fas fa-camera fa-lg" style="font-size: 25px;"></i>
 					</a></li>
-=======
-			<div class="collapse navbar-collapse text-center" id="navbarNavDropdown-1">
-				<ul class="navbar-nav ml-auto" style="margin: 0;">
-					<li class="nav-item">
-						<a class="nav-link btn btn" data-toggle="modal" href="#exampleModal">
-							<i class="fas fa-sliders-h fa-lg"></i>
-						</a>
->>>>>>> branch 'dev' of https://github.com/yeen2/final_templet.git
 
 					<li class="nav-item dropdown"><a
 						class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
