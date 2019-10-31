@@ -3,9 +3,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<!-- 부가적인 테마 -->
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">>
 <style>
+@charset "EUC-KR";
+@import url(https://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+/* p{
+	font-family: 'Jeju Gothic';
+} */
+p{
+	font-family: 'Jeju Gothic';
+	font-size: 18px;
+}
+body{
+	font-family: 'Nanum Gothic';
+}
 p{
 	margin:0px;
 
@@ -43,7 +61,9 @@ p{
 	transform:scale(1.0);
 	transition:transform .5s;
 }
+
 </style>
+ <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <%-- 
 	아이콘 사이트 : https://fontawesome.com/icons?d=gallery&m=free
@@ -69,7 +89,7 @@ kkk
 		<div class="row" style=" margin-top: 1rem!important">
 			<div class="col-3">
 				<div class="component">
-					<div class="card">
+					<div class="card" style="overflow: hidden;">
 
 						<div class="card-body" style="height: 400px; padding: 0px;">
 							<img class="card-img" src="<%=conPath %>/resources/assets/img/dog-2.jpg" alt="dog" style="height: 100%;">
@@ -93,7 +113,7 @@ kkk
 			
 			<div class="col-3">
 				<div class="component">
-					<div class="card">
+					<div class="card" style="overflow: hidden;">
 
 						<div class="card-body" style="height: 400px; padding: 0px;">
 							<img class="card-img" src="<%=conPath %>/resources/assets/img/dog-2.jpg" alt="dog" style="height: 100%;">
@@ -116,7 +136,7 @@ kkk
 			</div>
 			<div class="col-3">
 				<div class="component">
-					<div class="card">
+					<div class="card" style="overflow: hidden;">
 
 						<div class="card-body" style="height: 400px; padding: 0px;">
 								<img class="card-img" src="<%=conPath %>/resources/assets/img/dog-2.jpg" alt="dog" style="height: 100%;">
@@ -139,7 +159,7 @@ kkk
 			</div>
 			<div class="col-3">
 				<div class="component">
-					<div class="card">
+					<div class="card" style="overflow: hidden;">
 
 						<div class="card-body" style="height: 400px; padding: 0px;">
 							<img class="card-img" src="<%=conPath %>/resources/assets/img/dog-2.jpg" alt="dog" style="height: 100%;">
@@ -185,13 +205,13 @@ kkk
 							<img class="card-img" src="<%=conPath %>/resources/assets/img/dog-2.jpg" alt="dog" style="height: 100%;">
 						</div>
 						<div class="card-footer row">
-						<div class="col-3 form-inline">
-						
-							<i class="fa fa-heart" aria-hidden="true"></i>
+							<div class="col-3 form-inline">
+							<a href=""><i class="far fa-heart" style="color:black; font-size: 30px;"></i>
+								</a>
 							<p style="margin:0px;">30</p>
 						</div>
 						<div class="col-3 form-inline" style="padding:0px;">
-							<i class="fa fa-comment" aria-hidden="true"></i>
+							<a href=""><i class="far fa-comment" aria-hidden="true" style="color:black; font-size:30px;"></i></a>
 							<p style="margin:0px;">30</p>
 						</div>
 	
@@ -381,23 +401,54 @@ $(window).scroll(function() {
 });
 
 var sel;
-$(document).on("click", ".btn", function(){
+$(document).on("click", ".b", function(){
 	console.log("ddd");
 
-	$(".btn").children().removeAttr('style');
+	$(".b").children().removeAttr('style');
 	$(this).children().css('color','white');
     sel = $(this).attr('id');
 });
+
+var selectC
+$(document).on("click",".bb",function(){
+	
+	var color = $("#selectColor");
+	
+	console.log(color);
+//	$(color).css("background",$(this).children().attr("id"))
+	
+	selectC = $(this).children().attr("id");
+	//$(".bb").children().removeAttr('style');
+	
+	
+	$(".bb").children().attr('class','fa fa-circle fa-5x');
+	
+	$(this).children().attr('class','fa fa-check fa-5x');
+	
+	
+	 // style="height:30px; width:500px; margin-bottom:10px; background:black;"
+	color.css({"height":"15px","width":"500px","margin-top":"30px","background":$(this).children().attr("id")});
+	
+	
+});
+
 function reset(){
-	$(".btn").children().removeAttr('style');
+	$(".b").children().removeAttr('style');
+	$(".bb").children().attr('class','fa fa-circle fa-5x');
+	$("#selectColor").removeAttr('style');
 }
+//AJAX 기능구현 할때사
 function select(){
+	var category = $("#category").val();
 	console.log(sel);
+	console.log(category);
+	console.log(selectC);
+
 	$.ajax({
 		url:"index.jsp",
 		data:sel,
 		success:function(){
-			man();
+			man(category);
 			console.log("성공");
 		},
 		error:function(){
@@ -405,14 +456,14 @@ function select(){
 		}
 	});
 }
-function man(){
+function man(category){
 	
-	console.log("안녕하e");
+	console.log("안녕하e");	
 	
 	var filter = $("#filter-drop");
 	/*filter.css("border: 1px solid black; width: 100%; height: 50px; margin-top: 50px") */
 	filter.append("<i class='fa fa-sliders fa-md' style='color:white; margin-top:10px; margin-left:399px;'>"
-	+"<span style='margin-left:20px;'>"+'필터 - '+sel+"</span>"+"<a class='btn' onclick='on();' style='margin-left:960px;'><i class='fa fa-times fa-md'></i></a>"+"</i>");
+	+"<span style='margin-left:20px;'>"+'필터 - '+sel+'   |   <i class="fa fa-circle" style="color:'+selectC+'"></i>   |   ' +category +" </span>"+"<a class='btn' onclick='on();' style='margin-left:960px;'><i class='fa fa-times fa-md'></i></a>"+"</i>");
 	filter.css({"border":"1px solid black","width":"100%","height":"50px","margin-top":"50px","background":"black"});
 	
 }
@@ -422,7 +473,11 @@ function on(){
 	$("#filter-drop").removeAttr('style');
 	
 }
+
+
 </script>
+
+
 
 		<%@include file="views/includes/footer.jsp" %>
 	

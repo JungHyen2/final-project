@@ -12,6 +12,7 @@
 						<li><a href="https://bootstrapbay.com/about" target="_blank">About Us</a></li>
 						<li><a href="https://bootstrapbay.com/blog/" target="_blank">Blog</a></li>
 						<li><a href="https://bootstrapbay.com/terms" target="_blank">Terms & Conditions</a></li>
+						<li><i class="fa fa-spinner fa-pulse fa-fw fa-5x"></i> </li>
 					</ul>
 				</div>
 				<div class="social mt-4 mt-md-0">
