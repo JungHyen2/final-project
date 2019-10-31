@@ -363,7 +363,26 @@
 				<div class="card my-4">
 					<h5 class="card-header">스타일 정보</h5>
 					<div class="card-body">
-						
+						<!-- 동적 추가 삭제 -->
+						<div>
+							<label>카테고리</label>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<div class="form-group" style="display: inline-block;">
+								<select class="custom-select">
+									<option selected>Open this select menu</option>
+									<option value="1">One</option>
+									<option value="2">Two</option>
+									<option value="3">Three</option>
+								</select>
+							</div>
+							
+							<label>브랟드</label>
+							<div class="form-group">
+								<input type="email" class="form-control" id="text" placeholder="브랜드를 적어주세요">
+							</div>
+
+							<label>컬러</label>
+						</div>
 					</div>
 
 				</div>
