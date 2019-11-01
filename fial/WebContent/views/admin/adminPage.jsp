@@ -6,13 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
-<<<<<<< HEAD
 <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-=======
  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round"> 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
->>>>>>> branch 'hye' of https://github.com/yeen2/final_templet.git
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -440,11 +437,7 @@ $(document).ready(function(){
 				<li class="nav-item">
 					<a class="nav-link active" data-toggle="tab" href="#users"> 
 					<i class="fas fa-th"></i>
-<<<<<<< HEAD
 						회원정보
-=======
-						회원
->>>>>>> branch 'hye' of https://github.com/yeen2/final_templet.git
 					</a>
 				</li>
 				<li class="nav-item">
@@ -456,21 +449,13 @@ $(document).ready(function(){
 				<li class="nav-item">
 					<a class="nav-link" data-toggle="tab" href="#advertisement"> 
 					<i class="far fa-bookmark"></i> 
-<<<<<<< HEAD
 						광고 관리
-=======
-						신고
->>>>>>> branch 'hye' of https://github.com/yeen2/final_templet.git
 					</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" data-toggle="tab" href="#statistics"> 
 					<i class="far fa-id-badge"></i> 
-<<<<<<< HEAD
 						통계
-=======
-						광고
->>>>>>> branch 'hye' of https://github.com/yeen2/final_templet.git
 					</a>
 				</li>
 			</ul>
