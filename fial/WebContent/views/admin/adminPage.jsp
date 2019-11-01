@@ -433,21 +433,27 @@ $(document).ready(function(){
 			<!-- 메뉴바 -->
 			<ul class="nav nav-primary nav-tabs mt-3 d-flex flex-column flex-md-row">
 				<li class="nav-item">
-					<a class="nav-link active" data-toggle="tab" href="#photos"> 
+					<a class="nav-link active" data-toggle="tab" href="#users"> 
 					<i class="fas fa-th"></i>
-						Users
+						회원정보
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" data-toggle="tab" href="#saved"> 
+					<a class="nav-link" data-toggle="tab" href="#declare"> 
+					<i class="fas fa-th"></i>
+						신고 관리
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#advertisement"> 
 					<i class="far fa-bookmark"></i> 
-						Declare
+						광고 관리
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" data-toggle="tab" href="#tagged"> 
+					<a class="nav-link" data-toggle="tab" href="#statistics"> 
 					<i class="far fa-id-badge"></i> 
-						Advertisement
+						통계
 					</a>
 				</li>
 			</ul>
