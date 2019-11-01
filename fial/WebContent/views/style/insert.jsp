@@ -331,63 +331,196 @@
 				<!-- 1. 성별 -->
 				<div class="card my-4">
 					<div class="card-body" style="display: inline-block;">
-						<h5 style="display: inline-block; padding-top: 8px; margin-bottom: 0;">성별</h5> &nbsp;&nbsp;
+						<h5
+							style="display: inline-block; padding-top: 8px; margin-bottom: 0;">성별</h5>
+						&nbsp;&nbsp;
 						<form class="form-group" style="display: inline-block;">
-							<div class="custom-control custom-radio my-2" style="padding-top: 0 !important; display: inline-block;">
-								<input type="radio" id="men" name="gender" value="men" class="custom-control-input" checked> 
-								<label class="custom-control-label" for="men">남자</label>
+							<div class="custom-control custom-radio my-2"
+								style="padding-top: 0 !important; display: inline-block;">
+								<input type="radio" id="men" name="gender" value="men"
+									class="custom-control-input" checked> <label
+									class="custom-control-label" for="men">남자</label>
 							</div>
-							<div class="custom-control custom-radio my-2" style="padding-top: 0 !important; display: inline-block;">
-								<input type="radio" id="woman" name="gender" value="woman" class="custom-control-input"> 
-								<label class="custom-control-label" for="woman">여자</label>
+							<div class="custom-control custom-radio my-2"
+								style="padding-top: 0 !important; display: inline-block;">
+								<input type="radio" id="woman" name="gender" value="woman"
+									class="custom-control-input"> <label
+									class="custom-control-label" for="woman">여자</label>
 							</div>
 						</form>
 					</div>
 				</div>
-				
+
 				<!-- 2. 위치선택 -->
 				<div class="card my-4">
 					<h5 class="card-header">촬영 위치</h5>
 					<div class="card-body">
 						<div class="input-group">
 							<!-- 주소 담길 text  -->
-							<input type="text" class="form-control" name="add" id="add"> 
+							<input type="text" class="form-control" name="add" id="add">
 							<!-- 지도버튼  -->
-							<button type="button" class="btn btn-info" data-toggle="modal" id="addOpenBtn" data-target="#addModal">지도</button>
+							<button type="button" class="btn btn-info" data-toggle="modal"
+								id="addOpenBtn" data-target="#addModal">지도</button>
 						</div>
 					</div>
 				</div>
-			
-			
+
+
 				<!-- Side Widget -->
 				<div class="card my-4">
-					<h5 class="card-header">스타일 정보</h5>
+					<h5 class="card-header">스타일 정보를 공유해주세요</h5>
+					
+					<% for(int i=0; i<3; i++){ %>
 					<div class="card-body">
 						<!-- 동적 추가 삭제 -->
 						<div>
-							<label>카테고리</label>
+							<!-- 1.카테고리 -->
+							<label>카테고리</label> 
 							&nbsp;&nbsp;&nbsp;&nbsp;
 							<div class="form-group" style="display: inline-block;">
 								<select class="custom-select">
-									<option selected>Open this select menu</option>
-									<option value="1">One</option>
-									<option value="2">Two</option>
-									<option value="3">Three</option>
+									<option value="1" disabled>상의</option>
+									<option value="2">&nbsp;&nbsp;&nbsp;T-SHIRT</option>
+									<option value="3">&nbsp;&nbsp;&nbsp;SWEATSHIRT</option>
+									<option value="4">&nbsp;&nbsp;&nbsp;SHIRT</option>
+									<option value="5">&nbsp;&nbsp;&nbsp;BLAZER</option>
+									<option value="6">&nbsp;&nbsp;&nbsp;JACKET</option>
+									<option value="7">&nbsp;&nbsp;&nbsp;OUTER</option>
+									<option value="8">&nbsp;&nbsp;&nbsp;SLEEVELESS</option>
+									<option value="9">&nbsp;&nbsp;&nbsp;CROP TEE</option>
+									<option value="10">&nbsp;&nbsp;&nbsp;HOODIE</option>
+									<option value="11">&nbsp;&nbsp;&nbsp;POLO</option>
+									<option value="12">&nbsp;&nbsp;&nbsp;KNIT</option>
+									<option value="13">&nbsp;&nbsp;&nbsp;TANK TOP</option>
+									<option value="14">&nbsp;&nbsp;&nbsp;VEST</option>
+									<option value="44">&nbsp;&nbsp;&nbsp;CARDIGAN</option>
+									<option value="45">&nbsp;&nbsp;&nbsp;COAT</option>
+									<option value="15" disabled>하의</option>
+									<option value="16">&nbsp;&nbsp;&nbsp;JEANS</option>
+									<option value="17">&nbsp;&nbsp;&nbsp;PANTS</option>
+									<option value="18">&nbsp;&nbsp;&nbsp;SHORTS</option>
+									<option value="19">&nbsp;&nbsp;&nbsp;SKIRT</option>
+									<option value="20" disabled>신발</option>
+									<option value="21">&nbsp;&nbsp;&nbsp;SNEAKERS</option>
+									<option value="22">&nbsp;&nbsp;&nbsp;BOOTS</option>
+									<option value="23">&nbsp;&nbsp;&nbsp;HEELS</option>
+									<option value="24">&nbsp;&nbsp;&nbsp;SANDALS</option>
+									<option value="25">&nbsp;&nbsp;&nbsp;CASUAL SHOES</option>
+									<option value="26">&nbsp;&nbsp;&nbsp;FORMAL SHOES</option>
+									<option value="27" disabled>악세서리</option>
+									<option value="28">&nbsp;&nbsp;&nbsp;BAG</option>
+									<option value="29">&nbsp;&nbsp;&nbsp;JEWELRY</option>
+									<option value="30">&nbsp;&nbsp;&nbsp;BRACELET</option>
+									<option value="31">&nbsp;&nbsp;&nbsp;WATCH</option>
+									<option value="32">&nbsp;&nbsp;&nbsp;HAT</option>
+									<option value="33">&nbsp;&nbsp;&nbsp;EYEWEAR</option>
+									<option value="34">&nbsp;&nbsp;&nbsp;GLOVES</option>
+									<option value="35">&nbsp;&nbsp;&nbsp;SCARF</option>
+									<option value="36">&nbsp;&nbsp;&nbsp;SOCKS</option>
+									<option value="37">&nbsp;&nbsp;&nbsp;WALLET</option>
+									<option value="50">&nbsp;&nbsp;&nbsp;TIE</option>
+									<option value="38" disabled>기타</option>
+									<option value="39">&nbsp;&nbsp;&nbsp;SWIMWEAR</option>
+									<option value="40">&nbsp;&nbsp;&nbsp;DRESS</option>
+									<option value="41">&nbsp;&nbsp;&nbsp;JUMPSUIT</option>
+									<option value="42">&nbsp;&nbsp;&nbsp;OVERALL</option>
+									<option value="43">&nbsp;&nbsp;&nbsp;SUIT</option>
+									<option value="46">&nbsp;&nbsp;&nbsp;ONE-PIECE</option>
+									<option value="47">&nbsp;&nbsp;&nbsp;CAMERA</option>
+									<option value="48">&nbsp;&nbsp;&nbsp;PHONE</option>
+									<option value="49">&nbsp;&nbsp;&nbsp;SNACK</option>
+									<option value="51">&nbsp;&nbsp;&nbsp;ETC.</option>
+									<option value="52">&nbsp;&nbsp;&nbsp;BIKE</option>
 								</select>
 							</div>
 							
-							<label>브랟드</label>
-							<div class="form-group">
+							<br>
+							
+							<!-- 2. 브랜드 -->
+							<label>브랜드</label>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<div class="form-group" style="display: inline-block;">
 								<input type="email" class="form-control" id="text" placeholder="브랜드를 적어주세요">
 							</div>
-
+							
+							<br>
+							
+							<!-- 3. 컬러 -->
 							<label>컬러</label>
-						</div>
-					</div>
+							<form style="margin: auto; text-align: center;">
+							
+							<div style="padding:0; margin: 0px; display: inline-block; width: 28px; height: 28px;">
+								<a id="navy" class="btn bb" style="padding:0; margin: 0px;"> 
+									<i class="fa fa-circle fa-2x" aria-hidden="true" style="color: red;" id="red"></i>
+								</a> 
+							</div>
+							<div style="padding:0; margin: 0px; display: inline-block; width: 28px; height: 28px;">
+								<a id="navy" class="btn bb" style="padding:0; margin: 0px;"> 
+									<i class="fa fa-circle fa-2x" aria-hidden="true" style="color: orange;" id="orange"></i>
+								</a> 
+							</div>
+							<div style="padding:0; margin: 0px; display: inline-block; width: 28px; height: 28px;">
+								<a id="navy" class="btn bb" style="padding:0; margin: 0px;"> 
+									<i class="fa fa-circle fa-2x" aria-hidden="true" style="color:yellow;" id="yellow"></i>
+								</a> 
+							</div>
+							<div style="padding:0; margin: 0px; display: inline-block; width: 28px; height: 28px;">
+								<a id="navy" class="btn bb" style="padding:0; margin: 0px;"> 
+									<i class="fa fa-circle fa-2x" aria-hidden="true" style="color: green;" id="green"></i>
+								</a> 
+							</div>
+							<div style="padding:0; margin: 0px; display: inline-block; width: 28px; height: 28px;">
+								<a id="navy" class="btn bb" style="padding:0; margin: 0px;"> 
+									<i class="fa fa-circle fa-2x" aria-hidden="true" style="color: blue;" id="blue"></i>
+								</a> 
+							</div>
+							<div style="padding:0; margin: 0px; display: inline-block; width: 28px; height: 28px;">
+								<a id="navy" class="btn bb" style="padding:0; margin: 0px;"> 
+									<i class="fa fa-circle fa-2x" aria-hidden="true" style="color:navy;" id="navy"></i>
+								</a> 
+							</div>
+							
+							
+							
+							<div style="padding:0; margin: 0px; display: inline-block; width: 28px; height: 28px;">
+								<a id="navy" class="btn bb" style="padding:0; margin: 0px;"> 
+									<i class="fa fa-circle fa-2x" aria-hidden="true" style="color: black;" id="black"></i>
+								</a> 
+							</div>
+							<div style="padding:0; margin: 0px; display: inline-block; width: 28px; height: 28px;">
+								<a id="navy" class="btn bb" style="padding:0; margin: 0px;"> 
+									<i class="fa fa-circle fa-2x" aria-hidden="true" style="color: white;" id="white"></i>
+								</a> 
+							</div>
+							<div style="padding:0; margin: 0px; display: inline-block; width: 28px; height: 28px;">
+								<a id="navy" class="btn bb" style="padding:0; margin: 0px;"> 
+									<i class="fa fa-circle fa-2x" aria-hidden="true" style="color: pink;" id="pink"></i>
+								</a> 
+							</div>
+							<div style="padding:0; margin: 0px; display: inline-block; width: 28px; height: 28px;">
+								<a id="navy" class="btn bb" style="padding:0; margin: 0px;"> 
+									<i class="fa fa-circle fa-2x" aria-hidden="true" style="color: brown;" id="brown"></i>
+								</a> 
+							</div>
+							<div style="padding:0; margin: 0px; display: inline-block; width: 28px; height: 28px;">
+								<a id="navy" class="btn bb" style="padding:0; margin: 0px;"> 
+									<i class="fa fa-circle fa-2x" aria-hidden="true" style="color: beige;" id="beige"></i>
+								</a> 
+							</div>
+							<div style="padding:0; margin: 0px; display: inline-block; width: 28px; height: 28px;">
+								<a id="navy" class="btn bb" style="padding:0; margin: 0px;"> 
+									<i class="fa fa-circle fa-2x" aria-hidden="true" style="color: aqua;" id="aqua"></i>
+								</a> 
+							</div>
+							
+							</form>
+							
+						</div> <!-- 동적 div end  -->
+					</div> 	<!-- card-body end -->
+				<% } %> 
+				</div>  <!-- card my-4 end -->
 
-				</div>
-
-			</div>
+			</div>  <!-- col-md-5 -->
 
 		</div>
 		<!-- /.row -->
