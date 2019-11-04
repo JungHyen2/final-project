@@ -234,7 +234,7 @@
 			<div class="col-lg-7">
 
 				<!-- Title -->
-				<h1 class="mt-4">Posting</h1>
+				<h1 class="mt-4">**의 Today's Posting</h1>
 
 				<hr>
 				<!-- 이미지 -->
@@ -251,77 +251,12 @@
 				<hr>
 				
 				<!-- Post Content -->
-				<p>내용</p>
-				
-				<hr>
+				<textarea rows="10" cols="70" id="content" name="content"
+						placeholder="사진에 대한 내용과 #해시태그는 이 안에 입력해주세요."></textarea>
 
-				<!-- 댓글 -->
-				<p>View all 4 comments</p>
-				<br>
-				<div class="media mb-4">
-					<img class="d-flex mr-3 rounded-circle"
-						src="http://placehold.it/50x50" alt="">
-					<div class="media-body">
-						<h5 class="mt-0">Commenter Name</h5>
-						Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-						scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-						vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-						nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-					</div>
-				</div>
+			
 
-				<!-- 댓글 -->
-				<div class="media mb-4">
-					<img class="d-flex mr-3 rounded-circle"
-						src="http://placehold.it/50x50" alt="">
-					<div class="media-body">
-						<h5 class="mt-0">Commenter Name</h5>
-						Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-						scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-						vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-						nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
 
-						<!-- 대댓글 -->
-						<div class="media mt-4">
-							<img class="d-flex mr-3 rounded-circle"
-								src="http://placehold.it/50x50" alt="">
-							<div class="media-body">
-								<h5 class="mt-0">Commenter Name</h5>
-								Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-								scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-								vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-								nisi vulputate fringilla. Donec lacinia congue felis in
-								faucibus.
-							</div>
-						</div>
-						<!-- 대댓글 -->
-						<div class="media mt-4">
-							<img class="d-flex mr-3 rounded-circle"
-								src="http://placehold.it/50x50" alt="">
-							<div class="media-body">
-								<h5 class="mt-0">Commenter Name</h5>
-								Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-								scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-								vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
-								nisi vulputate fringilla. Donec lacinia congue felis in
-								faucibus.
-							</div>
-						</div>
-
-					</div>
-				</div>
-
-				<!-- 댓글 달기 폼 : 마우스로 textarea클릭시, 로그인 안되있으면 로그인해달라는 alert띄우기 -->
-				<div class="card my-4">
-					<div class="card-body">
-						<form>
-							<div class="form-group">
-								<textarea class="form-control" rows="3" placeholder="Post comment.."></textarea>
-							</div>
-							<button type="submit" class="btn btn-dark">Post comment</button>
-						</form>
-					</div>
-				</div>
 
 
 			</div>
@@ -367,11 +302,18 @@
 
 
 				<!-- Side Widget -->
-				<div class="card my-4">
-					<h5 class="card-header">스타일 정보를 공유해주세요</h5>
+				<div class="card my-4" style="display: inline-block;" id="addLocation">
+					<h5 class="card-header" style="display: inline-block;">스타일 정보를 공유해주세요</h5>
+					<div style="display: inline-block; float: right; margin: auto;">
+						<button type="button" class="btn btn-primary" id="btnAdd">추가</button>
+					</div>
+					<br><br>
 					
-					<% for(int i=0; i<3; i++){ %>
-					<div class="card-body">
+					<%-- <% for(int i=0; i<3; i++){ %> --%>
+					<div class="card-body" id="addDiv"
+						style="border-radius: 0; border: none; box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+    							transition: transform 800ms cubic-bezier(0.165, 0.84, 0.44, 1); display: inline-block;
+    							margin-right: 10px; margin-left: 10px;">
 						<!-- 동적 추가 삭제 -->
 						<div>
 							<!-- 1.카테고리 -->
@@ -433,6 +375,11 @@
 									<option value="52">&nbsp;&nbsp;&nbsp;BIKE</option>
 								</select>
 							</div>
+							
+							<!-- 삭제버튼 -->
+							<!-- <div style="display: inline-block; float: right;">
+								<i class="fas fa-times" id="removeDiv"></i>
+							</div> -->
 							
 							<br>
 							
@@ -517,9 +464,31 @@
 							
 						</div> <!-- 동적 div end  -->
 					</div> 	<!-- card-body end -->
-				<% } %> 
+					
+					<br>
+				<%-- <% } %>  --%>
+				 <script>            
+			        $(document).ready (function () {                
+			            $('#btnAdd').click (function () {
+			            	
+			            	var addContent = $('#addDiv').html();
+			            	console.log(addContent);
+			            	
+			                $('#addLocation').append(
+			                	'<br><div class="card-body" id="addDiv" style="border-radius: 0; border: none; box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1); transition: transform 800ms cubic-bezier(0.165, 0.84, 0.44, 1); display: inline-block; margin-right: 10px; margin-left: 10px;"><div><br><div style="display: inline-block; float: right;"><i class="fas fa-times" id="removeDiv"></i></div>' + addContent + '</div>' 
+			               	); // end append    
+			                
+			                $('#removeDiv').on('click', function () { 
+			                    $(this).prev().remove (); // remove the textbox
+			                    $(this).next ().remove (); // remove the <br>
+			                    $(this).remove (); // remove the button
+			                });
+			            }); // end click                                            
+			        }); // end ready        
+			    </script> 
+			    
 				</div>  <!-- card my-4 end -->
-
+	
 			</div>  <!-- col-md-5 -->
 
 		</div>
