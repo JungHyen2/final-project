@@ -39,14 +39,14 @@
 						</div>
 						<div class="form-group">
 							<label for="userPwd">Password</label>
-							<input type="password" class="form-control" id="userPwd" name="userPwd"
+							<input type="password" class="form-control" id="pass" name="pass"
 								placeholder="Password">
 							<small id="passwordHelp" class="form-text text-danger">형식에 맞지 않습니다</small>
 						</div>
 						<div class="form-group">
-							<label for="userPwd2">Password Confirmation</label>
+							<label for="pass2">Password Confirmation</label>
 							<input type="password" class="form-control"
-								id="userPwd2" name="userPwd2" placeholder="Password">
+								id="pass2" name="pass2" placeholder="Password">
 						</div>
 						
 						<button type="submit" class="btn btn-block btn-dark" style="height:50px; margin-top:50px;">회원가입</button>

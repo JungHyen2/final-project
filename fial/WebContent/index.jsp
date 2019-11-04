@@ -9,7 +9,7 @@
 
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style>
 @charset "EUC-KR";
 @import url(https://fonts.googleapis.com/earlyaccess/jejugothic.css);

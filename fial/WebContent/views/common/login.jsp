@@ -20,8 +20,9 @@
 				  <div class="input-group-prepend">
 				    <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
 				  </div>
-				  <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
+					<input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
 				</div>
+				
 				<div class="input-group mt-3">
 					<div class="input-group-prepend">
 						<span class="input-group-text" id="basic-addon2"><i class="fas fa-key"></i></span>
