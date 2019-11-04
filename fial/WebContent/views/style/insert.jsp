@@ -313,7 +313,7 @@
 					<div class="card-body" id="addDiv"
 						style="border-radius: 0; border: none; box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
     							transition: transform 800ms cubic-bezier(0.165, 0.84, 0.44, 1); display: inline-block;
-    							margin-right: 10px; margin-left: 10px;">
+    							margin-right: 10px; margin-left: 10px; margin-bottom: 10px;">
 						<!-- 동적 추가 삭제 -->
 						<div>
 							<!-- 1.카테고리 -->
@@ -475,11 +475,13 @@
 			            	console.log(addContent);
 			            	
 			                $('#addLocation').append(
-			                	'<br><div class="card-body" id="addDiv" style="border-radius: 0; border: none; box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1); transition: transform 800ms cubic-bezier(0.165, 0.84, 0.44, 1); display: inline-block; margin-right: 10px; margin-left: 10px;"><div><br><div style="display: inline-block; float: right;"><i class="fas fa-times" id="removeDiv"></i></div>' + addContent + '</div>' 
+			                	'<br><div class="card-body" id="addDiv" style="border-radius: 0; border: none; box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1); transition: transform 800ms cubic-bezier(0.165, 0.84, 0.44, 1); display: inline-block; margin-right: 10px; margin-left: 10px;"><div><br><div style="display: inline-block; float: right;"><button type="button" id="removeDiv" style="cursor: pointer; background-color: transparent; border: none; text-decoration: none;"><i class="fas fa-times"></i></button></div>' + addContent + '</div>' 
+			               	).append(
+			               		'<br>'		
 			               	); // end append    
 			                
 			                $('#removeDiv').on('click', function () { 
-			                    $(this).prev().remove (); // remove the textbox
+			                    $(this).parent().parent().parent().remove (); // remove the textbox
 			                    $(this).next ().remove (); // remove the <br>
 			                    $(this).remove (); // remove the button
 			                });
