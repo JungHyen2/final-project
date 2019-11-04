@@ -180,11 +180,11 @@ kkk
 					</div>
 				</div>
 		</div>
-		<div class="row mt-3">
+
+	<div class="row mt-3">
 			<div class="col-md-4">
 				<div class="component">
 					<div class="card" style="overflow: hidden;">
-						<a href="<%=conPath%>/views/style/info.jsp" style="border-bottom: 0px !important; text-decoration: none black;" >
 						<div class="form-inline" style="width: 100%; height:80px; margin:0px; color:black;">
 
 							<div class="col-2" style="width: 30%; height: 50px; padding:0px;"  >
@@ -198,11 +198,12 @@ kkk
 								<button class="btn btn-dark"><span style="font-size: 1.2em">+Fan</span></button>
 							
 							</div>
-						</div>
+						</div>	
 					
-						</a>
 						<div class="card-body" style="height: 400px; padding: 0px;">
+						<a href="<%=conPath%>/views/style/info.jsp" style="border-bottom: 0px !important; text-decoration: none black;" >
 							<img class="card-img" src="<%=conPath %>/resources/assets/img/dog-2.jpg" alt="dog" style="height: 100%;">
+						</a>
 						</div>
 						<div class="card-footer row">
 							<div class="col-3 form-inline">
@@ -389,15 +390,18 @@ kkk
 var page = 2;
 
 $(window).scroll(function() {
-    if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+    if($(window).scrollTop() == $(document).height() - $(window).height()){    	
       console.log(++page);
+     // $("i").removeClass('fa-spinner');
       //$("#ddd").append("<div class='row mt-3' style='border:1px solid black;'>");
       var dlendud=$('#ttt').clone();
    //   dlendud.find('img').eq(0).attr('src','~~~"')
-      $('.eee').append('<div class="row mt-3">'+dlendud.html()+'</div>');
-      //$('.eee').append(dlendud.html());
 
+      $('.eee').append('<div class="row mt-3">'+dlendud.html()+'</div>');
+   	  
     }
+   
+ 
 });
 
 var sel;
@@ -438,7 +442,11 @@ function reset(){
 	$("#selectColor").removeAttr('style');
 }
 //AJAX 기능구현 할때사
+
 function select(){
+	$(".b").children().removeAttr('style');
+	$(".bb").children().attr('class','fa fa-circle fa-5x');
+	$("#selectColor").removeAttr('style');
 	var category = $("#category").val();
 	console.log(sel);
 	console.log(category);
@@ -475,11 +483,14 @@ function on(){
 }
 
 
+	 $(document).ready(function(){
+	$('#loading').append("<i class='fa fa-spinner fa-pulse fa-fw fa-5x'></i>");
+}); 
 </script>
 
 
-
+		<div id="loading" style="width: 100%; height: 50px; margin-left: 900px;"></div>
 		<%@include file="views/includes/footer.jsp" %>
-	
+
 </body>
 </html>

@@ -8,11 +8,11 @@
 			<div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
 				<div class="links">
 					<ul class="footer-menu list-unstyled d-flex flex-row text-center text-md-left">
-						<li><a href="https://bootstrapbay.com/" target="_blank">Store</a></li>
-						<li><a href="https://bootstrapbay.com/about" target="_blank">About Us</a></li>
-						<li><a href="https://bootstrapbay.com/blog/" target="_blank">Blog</a></li>
-						<li><a href="https://bootstrapbay.com/terms" target="_blank">Terms & Conditions</a></li>
-						<li><i class="fa fa-spinner fa-pulse fa-fw fa-5x"></i> </li>
+						<li><a href="views/includes/notice.jsp" target="_blank">공지사항</a></li>
+						<li><a href="https://bootstrapbay.com/about" target="_blank">사이트소개</a></li>
+						<li><a href="https://bootstrapbay.com/blog/" target="_blank">광고문의</a></li>
+						<li><a href="https://bootstrapbay.com/terms" target="_blank">비즈니스</a></li>
+						
 					</ul>
 				</div>
 				<div class="social mt-4 mt-md-0">
@@ -45,5 +45,24 @@
 			</div>
 		</div>
 	</footer>
-</body>
+<!-- 	<script>
+	var page = 2;
+
+	$(window).scroll(function() {
+	    if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+	      console.log(++page);
+	      //$("#ddd").append("<div class='row mt-3' style='border:1px solid black;'>");
+	      var dlendud=$('#ttt').clone();
+	   //   dlendud.find('img').eq(0).attr('src','~~~"')
+	      $('.eee').append('<div class="row mt-3">'+dlendud.html()+'</div>');
+	      $('.eee').append("<i class='ddd fa fa-spinner fa-pulse fa-fw fa-5x'></i> ");
+			
+	      //$('.eee').append(dlendud.html());
+
+	    }else{
+	    	$('.ddd').removeAttr('class')
+	    }
+	});</script>
+ -->
+ </body>
 </html>
