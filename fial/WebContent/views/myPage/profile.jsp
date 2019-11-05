@@ -7,7 +7,7 @@
 <style>
 	#addAlarm{width:100%; height:inherit; background:lightgray; border:2px solid white;}
 	#addAlarmImg{padding:10px 0 0 10px; width:17%; height:auto; display:inline-block;}
-	#addAlarmImg img{width:50px; height:50px;}
+	#addAlarmImg img{width:50px; height:50px; border-radius:1.5em;}
 	#addAlarmNick{display:inline-block; width:50%;}
 	#addAlarmDate{display:inline-block; width:25%; text-align:right;}
 	#addAlarmCon{padding:10px 10px 10px 10px}
@@ -46,23 +46,12 @@
 							
 							<!-------------------------------------- 알림창 테스트 --------------------------------------->
 							
-							<div style="position:absolute; top:45px; right:-135px; width:400px; max-height:216px;
+							<div style="position:absolute; top:45px; right:-135px; width:400px; max-height:255px;
 										overflow-y:auto; overflow-x:hidden; display:none; background:skyblue; z-index:1000;" id="alarmDiv">
+								<div align="right">
+									<button type="button" class="btn btn-danger">알림 전체 삭제</button>
+								</div>
 							    <!-- 알림 추가될 때마다 div 추가 -->
-							    <div id="addAlarm">
-							    	<div id="addAlarmImg">
-							    		<img src="<%=conPath %>/resources/assets/img/lorde.png">
-							    	</div>
-							    	<div id="addAlarmNick">
-							    		<p>닉네임</p>
-							    	</div>
-							    	<div id="addAlarmDate">
-							    		<p>30초전</p>
-							    	</div>
-							    	<div id="addAlarmCon">
-							    		친구신청합니다~
-							    	</div>
-							    </div>
 							    <div id="addAlarm">
 							    	<div id="addAlarmImg">
 							    		<img src="<%=conPath %>/resources/assets/img/lorde.png">
@@ -171,7 +160,7 @@
 		
 		<div class="navigation d-flex justify-content-center">
 			<!-- 메뉴바 -->
-			<ul class="nav nav-primary nav-tabs mt-3 d-flex flex-column flex-md-row">
+			<ul id="tabMenu" class="nav nav-primary nav-tabs mt-3 d-flex flex-column flex-md-row">
 				<li class="nav-item">
 					<a class="nav-link active" data-toggle="tab" href="#photos"> 
 					<i class="fas fa-th"></i>
@@ -200,32 +189,32 @@
 				<div class="row" id="plus">
 					<div class="col-12 col-md-4">
 						<div class="square"
-							style="background-image: url('<%=conPath %>/resources/assets/img/dog-4.jpg');">
+							style="background-image: url('<%=conPath %>/resources/assets/img/profile1.jpg');">
 						</div>
 					</div>
 					<div class="col-12 col-md-4">
 						<div class="square"
-							style="background-image: url('<%=conPath %>/resources/assets/img/dog-5.jpg');">
+							style="background-image: url('<%=conPath %>/resources/assets/img/profile2.jpg');">
 						</div>
 					</div>
 					<div class="col-12 col-md-4">
 						<div class="square"
-							style="background-image: url('<%=conPath %>/resources/assets/img/dog-6.jpg');">
+							style="background-image: url('<%=conPath %>/resources/assets/img/profile3.jpg');">
 						</div>
 					</div>
 					<div class="col-12 col-md-4">
 						<div class="square"
-							style="background-image: url('<%=conPath %>/resources/assets/img/dog-7.jpg');">
+							style="background-image: url('<%=conPath %>/resources/assets/img/profile4.jpg');">
 						</div>
 					</div>
 					<div class="col-12 col-md-4">
 						<div class="square"
-							style="background-image: url('<%=conPath %>/resources/assets/img/dog-8.jpg');">
+							style="background-image: url('<%=conPath %>/resources/assets/img/profile5.jpg');">
 						</div>
 					</div>
 					<div class="col-12 col-md-4">
 						<div class="square"
-							style="background-image: url('<%=conPath %>/resources/assets/img/dog-3.jpg');">
+							style="background-image: url('<%=conPath %>/resources/assets/img/profile6.jpg');">
 						</div>
 					</div>
 				</div>
@@ -243,27 +232,27 @@
 				<div class="row" id="plus2">
 					<div class="col-12 col-md-4">
 						<div class="square"
-							style="background-image: url('<%=conPath %>/resources/assets/img/dog-4.jpg');"></div>
+							style="background-image: url('<%=conPath %>/resources/assets/img/profile1.jpg');"></div>
 					</div>
 					<div class="col-12 col-md-4">
 						<div class="square"
-							style="background-image: url('<%=conPath %>/resources/assets/img/dog-5.jpg');"></div>
+							style="background-image: url('<%=conPath %>/resources/assets/img/profile2.jpg');"></div>
 					</div>
 					<div class="col-12 col-md-4">
 						<div class="square"
-							style="background-image: url('<%=conPath %>/resources/assets/img/dog-6.jpg');"></div>
+							style="background-image: url('<%=conPath %>/resources/assets/img/profile3.jpg');"></div>
 					</div>
 					<div class="col-12 col-md-4">
 						<div class="square"
-							style="background-image: url('<%=conPath %>/resources/assets/img/dog-7.jpg');"></div>
+							style="background-image: url('<%=conPath %>/resources/assets/img/profile4.jpg');"></div>
 					</div>
 					<div class="col-12 col-md-4">
 						<div class="square"
-							style="background-image: url('<%=conPath %>/resources/assets/img/dog-8.jpg');"></div>
+							style="background-image: url('<%=conPath %>/resources/assets/img/profile5.jpg');"></div>
 					</div>
 					<div class="col-12 col-md-4">
 						<div class="square"
-							style="background-image: url('<%=conPath %>/resources/assets/img/dog-3.jpg');"></div>
+							style="background-image: url('<%=conPath %>/resources/assets/img/profile6.jpg');"></div>
 					</div>
 				</div>
 				<div class="d-flex justify-content-center my-5">
@@ -277,35 +266,31 @@
 					<span class="text-danger"><i class="far fa-frown-open"></i></span>
 					팔로우한 친구가 없습니다.
 				</p>
-				<a href="#a" class="btn btn-info btn-pill">Find Friend</a>
+				<a href="#header" class="btn btn-info btn-pill">Find Friend</a>
 			</div>
 		</div>
 
 	</div>
 
+	<div id="scrollTop1" style="position:fixed; border:1px solid lightgray; display:none; background:white; bottom:10px; right:10px;">
+		<a href="#"><img style="width:60px; height:60px;"src="<%=conPath %>/resources/assets/img/123a.png"></a>
+	</div>
+	
+	
 	<script>
 		function plus(){
-			<%-- var copy = $("#plus").clone()
-			var arr_copy = copy.find('div.square');
-			$(arr_copy[0]).css('background-image', 'url("<%=conPath %>/resources/assets/img/dog-4.jpg");');
-			$(arr_copy[1]).css('background-image', 'url("<%=conPath %>/resources/assets/img/dog-5.jpg");');
-			$(arr_copy[2]).css('background-image', 'url("<%=conPath %>/resources/assets/img/dog-6.jpg");');
-			$(arr_copy[3]).css('background-image', 'url("<%=conPath %>/resources/assets/img/dog-7.jpg");');
-			$(arr_copy[4]).css('background-image', 'url("<%=conPath %>/resources/assets/img/dog-8.jpg");');
-			$(arr_copy[5]).css('background-image', 'url("<%=conPath %>/resources/assets/img/dog-3.jpg");');
-			 --%>
 			var $copy1 = $("<div>").attr("class", "col-12 col-md-4");
-			$copy1.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/dog-4.jpg'" + ");"}));
+			$copy1.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/profile1.jpg'" + ");"}));
 			var $copy2 = $("<div>").attr("class", "col-12 col-md-4");
-			$copy2.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/dog-5.jpg'" + ");"}));
+			$copy2.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/profile2.jpg'" + ");"}));
 			var $copy3 = $("<div>").attr("class", "col-12 col-md-4");
-			$copy3.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/dog-6.jpg'" + ");"}));
+			$copy3.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/profile3.jpg'" + ");"}));
 			var $copy4 = $("<div>").attr("class", "col-12 col-md-4");
-			$copy4.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/dog-7.jpg'" + ");"}));
+			$copy4.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/profile4.jpg'" + ");"}));
 			var $copy5 = $("<div>").attr("class", "col-12 col-md-4");
-			$copy5.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/dog-8.jpg'" + ");"}));
+			$copy5.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/profile5.jpg'" + ");"}));
 			var $copy6 = $("<div>").attr("class", "col-12 col-md-4");
-			$copy6.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/dog-3.jpg'" + ");"}));
+			$copy6.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/profile6.jpg'" + ");"}));
 			
 			$("#plus").append($copy1);
 			$("#plus").append($copy2);
@@ -316,27 +301,18 @@
 		}
 		
 		function plus2(){
-			<%-- var copy = $("#plus").clone()
-			var arr_copy = copy.find('div.square');
-			$(arr_copy[0]).css('background-image', 'url("<%=conPath %>/resources/assets/img/dog-4.jpg");');
-			$(arr_copy[1]).css('background-image', 'url("<%=conPath %>/resources/assets/img/dog-5.jpg");');
-			$(arr_copy[2]).css('background-image', 'url("<%=conPath %>/resources/assets/img/dog-6.jpg");');
-			$(arr_copy[3]).css('background-image', 'url("<%=conPath %>/resources/assets/img/dog-7.jpg");');
-			$(arr_copy[4]).css('background-image', 'url("<%=conPath %>/resources/assets/img/dog-8.jpg");');
-			$(arr_copy[5]).css('background-image', 'url("<%=conPath %>/resources/assets/img/dog-3.jpg");');
-			 --%>
 			var $copy1 = $("<div>").attr("class", "col-12 col-md-4");
-			$copy1.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/dog-4.jpg'" + ");"}));
+			$copy1.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/profile1.jpg'" + ");"}));
 			var $copy2 = $("<div>").attr("class", "col-12 col-md-4");
-			$copy2.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/dog-5.jpg'" + ");"}));
+			$copy2.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/profile2.jpg'" + ");"}));
 			var $copy3 = $("<div>").attr("class", "col-12 col-md-4");
-			$copy3.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/dog-6.jpg'" + ");"}));
+			$copy3.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/profile3.jpg'" + ");"}));
 			var $copy4 = $("<div>").attr("class", "col-12 col-md-4");
-			$copy4.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/dog-7.jpg'" + ");"}));
+			$copy4.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/profile4.jpg'" + ");"}));
 			var $copy5 = $("<div>").attr("class", "col-12 col-md-4");
-			$copy5.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/dog-8.jpg'" + ");"}));
+			$copy5.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/profile5.jpg'" + ");"}));
 			var $copy6 = $("<div>").attr("class", "col-12 col-md-4");
-			$copy6.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/dog-3.jpg'" + ");"}));
+			$copy6.append($("<div>").attr({"class":"square", "style":"background-image: url(" + "'<%=conPath %>/resources/assets/img/profile6.jpg'" + ");"}));
 			
 			$("#plus2").append($copy1);
 			$("#plus2").append($copy2);
@@ -357,6 +333,13 @@
 			});
 		});
 		
+		$(document).ready(function(){
+			console.log(123);
+			var url = document.location.href;
+			var tab = url.split('/').pop();
+			$(tab).trigger("click");
+			console.log(33);
+		});
 		
 	</script>
 	
