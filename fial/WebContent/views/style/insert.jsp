@@ -475,18 +475,35 @@
 			            	console.log(addContent);
 			            	
 			                $('#addLocation').append(
-			                	'<br><div class="card-body" id="addDiv" style="border-radius: 0; border: none; box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1); transition: transform 800ms cubic-bezier(0.165, 0.84, 0.44, 1); display: inline-block; margin-right: 10px; margin-left: 10px;"><div><br><div style="display: inline-block; float: right;"><button type="button" id="removeDiv" style="cursor: pointer; background-color: transparent; border: none; text-decoration: none;"><i class="fas fa-times"></i></button></div>' + addContent + '</div>' 
+			                	'<br>'
+			                ).append(
+			                	'<div class="card-body" id="addDiv" style="border-radius: 0; border: none; box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1); transition: transform 800ms cubic-bezier(0.165, 0.84, 0.44, 1); display: inline-block; margin-right: 10px; margin-left: 10px;"><div><br><div style="display: inline-block; float: right;"><button type="button" id="removeDiv" style="cursor: pointer; background-color: transparent; border: none; text-decoration: none;"><i class="fas fa-times"></i></button></div>' + addContent + '</div>' 
 			               	).append(
 			               		'<br>'		
 			               	); // end append    
 			                
-			                $('#removeDiv').on('click', function () { 
+			               /*  $('#removeDiv').on('click', function () { 
 			                    $(this).parent().parent().parent().remove (); // remove the textbox
 			                    $(this).next ().remove (); // remove the <br>
 			                    $(this).remove (); // remove the button
-			                });
+			                }); */
 			            }); // end click                                            
-			        }); // end ready        
+			        }); // end ready 
+			        
+			        $(document).on("click", "#removeDiv", function(){
+			        	var removeThis = $("#removeDiv");
+			      
+			        	
+			        	removeThis.parent().parent().parent().prev().remove (); // remove the textbox
+			        	removeThis.parent().parent().parent().remove (); // remove the textbox
+			        	removeThis.next().remove (); // remove the <br>
+			        	removeThis.remove (); // remove the button
+			        
+			        	//$(this).parent().parent().parent().prev().remove (); // remove the textbox
+			        	//$(this).parent().parent().parent().remove (); // remove the textbox
+	                    //$(this).next().remove (); // remove the <br>
+	                    //$(this).remove (); // remove the button
+			        });
 			    </script> 
 			    
 				</div>  <!-- card my-4 end -->
@@ -540,6 +557,16 @@
 			</div>
 		</div>
 	</div>
+	
+	<!-- 카테고리 동적 추가/삭제 -->
+	<script type="text/javascript">
+		$(document).on("click", "", function () {
+			
+		})
+	</script>
+	
+	
+	<!-- 지도api -->
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8ef4b8fd4aebaa69e9172f4cc49921ca&libraries=services"></script>
 	<script>
 		$("#addSelectBtn").click(function () {
