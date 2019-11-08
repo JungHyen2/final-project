@@ -28,7 +28,7 @@
 		top: 0;
 		left: 0;
 		bottom: 0;
-		width: 250px;
+		width: 300px;
 		margin: 10px 0 30px 10px;
 		padding: 5px;
 		overflow-y: auto;
@@ -294,8 +294,10 @@
 							<!-- 주소 담길 text  -->
 							<input type="text" class="form-control" name="add" id="add">
 							<!-- 지도버튼  -->
+							<!-- <button type="button" class="btn btn-info" data-toggle="modal"
+								id="addOpenBtn" data-target="#addModal">지도</button> -->
 							<button type="button" class="btn btn-info" data-toggle="modal"
-								id="addOpenBtn" data-target="#addModal">지도</button>
+								id="addOpenBtn" >지도</button>
 						</div>
 					</div>
 				</div>
@@ -518,10 +520,20 @@
 	
 	
 	<!----------------------------------------------------- 지도 modal ----------------------------------------------->
+	
+	<!-- 모달창 열기 -->
+	<script>
+		$("#addOpenBtn").click(function () {
+			console.log('위치클릭');
+			//$("#addModal").css('height','500px').css('width','800px');
+			$("#addModal").modal('show');
+		});
 
+	</script>
+	
 	<div class="modal fade" id="addModal" tabindex="-1" role="dialog"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="width: 800px; height: 800px;">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<!-- <h5 class="modal-title" id="exampleModalLabel">Here is a modal</h5> -->
@@ -539,7 +551,7 @@
 							<div class="option">
 								<div>
 									<form onsubmit="searchPlaces(); return false;">
-										키워드 : <input type="text" value="" id="keyword" size="15">
+										키워드 : <input type="text" value="" id="keyword">
 										<button type="submit">검색하기</button>
 									</form>
 								</div>
@@ -558,20 +570,15 @@
 		</div>
 	</div>
 	
-	<!-- 카테고리 동적 추가/삭제 -->
-	<script type="text/javascript">
-		$(document).on("click", "", function () {
-			
-		})
-	</script>
-	
-	
+
 	<!-- 지도api -->
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8ef4b8fd4aebaa69e9172f4cc49921ca&libraries=services"></script>
 	<script>
 		$("#addSelectBtn").click(function () {
 			$('#addModal').modal("hide");
 		});
+		
+		
 	</script>
 	
 	<script>
@@ -580,10 +587,6 @@
 		
 		var markers = [];
 		var map;
-		
-		setTimeout(function(){ 
-			map.relayout(); }, 0.01
-		);
 
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		mapOption = {
@@ -594,7 +597,13 @@
 
 		// 지도를 생성합니다    
 		map = new kakao.maps.Map(mapContainer, mapOption);
+		
+		
+		setTimeout(function(){ 
+			map.relayout(); }, 0.01
+		);
 
+		
 		// 장소 검색 객체를 생성합니다
 		var ps = new kakao.maps.services.Places();
 
@@ -633,15 +642,16 @@
 				
 				console.log(data);
 				
+				/* 해당 주소 가져오는 코드 */
 				$("#placesList li").click(function () {
+					$(this).css('background-color','#dee2e6');
+					
 					var add = $(this).children('.info').children().eq(1).text();
 					
 					console.log(this);
 					console.log(add);
 					$("#add").val(add);
 				});
-				
-				
 				
 
 			} else if (status === kakao.maps.services.Status.ZERO_RESULT) {
