@@ -190,6 +190,9 @@
 		cursor: default;
 		color: #777;
 	}
+	#divImg:hover{
+		cursor: pointer;
+	}
 
 	/* 모달 */
 	/* The Modal (background) */
@@ -217,9 +220,8 @@
 		width: 80%;
 	}
 	
-
-
 </style>
+<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/jquery.placeholder.js"></script>
 </head>
 <body class="profile" style="margin-bottom: 20px !important;">
 	
@@ -227,7 +229,7 @@
 
 	<!-- Page Content -->
 	<div class="container" style="margin-top: 150px; margin-bottom: 70px;">
-
+		<form>
 		<div class="row">
 
 			<!-- 왼쪽 -->
@@ -238,8 +240,8 @@
 
 				<hr>
 				<!-- 이미지 -->
-				<div>
-					<img class="img-fluid rounded" src="http://placehold.it/500x600" alt="">
+				<div class="img" id="divImg" style="width: 500px; height:600px;">
+					<img id="img" width="100%" height="100%" >
 				</div>
 				<!-- 좋아요,신고-->
 				<div>
@@ -254,13 +256,43 @@
 				<textarea rows="10" cols="70" id="content" name="content"
 						placeholder="사진에 대한 내용과 #해시태그는 이 안에 입력해주세요."></textarea>
 
-			
-
-
-
-
 			</div>
+			
+			<!-- 사진업로드 부분 (hidden) -->
+			<div id="fileArea">
+				<input type="file" id="fileImg" name="fileImg" onchange="loadImg(this, 1);"> 
+			</div>
+			
+			<script>
+				// 각 div 클릭할 때 파일 첨부 창이 뜨도록
+				$(function() {
+					$("#fileArea").hide();
+		
+					$("#divImg").click(function() {
+						$("#fileImg").click();
+					});
+				});
+		
+				function loadImg(value, num) {
+		
+					if (value.files && value.files[0]) {
+		
+						// 1. 파일을 읽어들일 FileReader 객체 생성
+						var reader = new FileReader();
+		
+						// 2. 파일 읽기가 다 완료되었을 때 실행되는 메소드
+						reader.onload = function(e) {
+							$("#img").attr("src", e.target.result); // data:URL
 
+						}
+						// 파일 읽기 메소드
+						reader.readAsDataURL(value.files[0]);
+					}
+				}
+
+			</script>
+			
+			
 			<!-- 오른쪽 -->
 			<div class="col-md-5">
 				<!-- 1. 성별 -->
@@ -269,7 +301,7 @@
 						<h5
 							style="display: inline-block; padding-top: 8px; margin-bottom: 0;">성별</h5>
 						&nbsp;&nbsp;
-						<form class="form-group" style="display: inline-block;">
+						<div class="form-group" style="display: inline-block;">
 							<div class="custom-control custom-radio my-2"
 								style="padding-top: 0 !important; display: inline-block;">
 								<input type="radio" id="men" name="gender" value="men"
@@ -282,7 +314,7 @@
 									class="custom-control-input"> <label
 									class="custom-control-label" for="woman">여자</label>
 							</div>
-						</form>
+						</div>
 					</div>
 				</div>
 
@@ -396,7 +428,7 @@
 							
 							<!-- 3. 컬러 -->
 							<label>컬러</label>
-							<form style="margin: auto; text-align: center;">
+							<div style="margin: auto; text-align: center;">
 							
 							<div style="padding:0; margin: 0px; display: inline-block; width: 28px; height: 28px;">
 								<a id="navy" class="btn bb" style="padding:0; margin: 0px;"> 
@@ -462,7 +494,7 @@
 								</a> 
 							</div>
 							
-							</form>
+							</div>
 							
 						</div> <!-- 동적 div end  -->
 					</div> 	<!-- card-body end -->
@@ -513,8 +545,13 @@
 			</div>  <!-- col-md-5 -->
 
 		</div>
+		<br><br>
+		<div style="margin-right: auto; margin-left: auto; text-align: center;" class="col-12">
+			<button type="submit" class="btn btn-dark">등록</button> &nbsp;&nbsp;
+			<button type="reset" class="btn btn-outline-dark">취소</button>
+		</div>
 		<!-- /.row -->
-
+		</form>
 	</div>
 	<!-- /.container -->
 	
@@ -528,7 +565,6 @@
 			//$("#addModal").css('height','500px').css('width','800px');
 			$("#addModal").modal('show');
 		});
-
 	</script>
 	
 	<div class="modal fade" id="addModal" tabindex="-1" role="dialog"
@@ -582,6 +618,7 @@
 	</script>
 	
 	<script>
+
 		// 마커를 담을 배열입니다
 		kakao.maps.disableHD();
 		
@@ -827,6 +864,8 @@
 				el.removeChild(el.lastChild);
 			}
 		}
+
+		
 	</script>
 	
 	<%@include file="../includes/footer.jsp" %>
