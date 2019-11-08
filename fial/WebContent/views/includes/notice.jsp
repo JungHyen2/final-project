@@ -28,7 +28,8 @@ invest_table .title .date {
 	<!-- 공지사항 리스트 -->
 	<div class="container" style="margin: 200px;">
 		<h2>공지사항</h2>
-	<div>
+	
+	<div id=noticeDiv>
 		<div class="title form-inline" style="margin: 15px;">
 			<div class="col-11">
 				[공지] 이달의 업데이트 안내<br> <span class="date"
@@ -68,8 +69,8 @@ invest_table .title .date {
 	<div>
 		<div class="title form-inline" style="margin: 15px;">
 			<div class="col-11">
-				[공지] 리뷰 사진 선택 기능 업데이트 안내 <br> <span class="date"
-					style="color: #cbcbcb; font-size: .7rem;">2019-09-24</span> <!-- 날짜 -->
+				[공지] 리뷰 사진 선택 기능 업데이트 안내 <br> 
+				<span class="date" style="color: #cbcbcb; font-size: .7rem;">2019-09-24</span> <!-- 날짜 -->
 			</div>
 			<div class="col-1">
 				<a style="margin-left: 210px;"><i
@@ -96,7 +97,60 @@ invest_table .title .date {
 	</div>
 	
 	
-<script>
+	
+<!-- 	
+<script>	
+	$(function(){
+		noticeList();
+		
+	});
+	
+	function noticeList(){
+		$.ajax({
+			url:"noticeList.do",
+			dataType:"json",
+			success:function(data){
+				
+				var $noticeDiv = $("#noticeDiv");
+				$noticeDiv.html("");
+				
+				$.each(data, function(index, value){
+					
+					var $div1 = $("<div class='title form-inline' style='margin: 15px;'></div>");
+					var $div1_1 = $("<div class='col-11'>[공지] 리뷰 사진 선택 기능 업데이트 안내 <br> <span class='date'style='color: #cbcbcb; font-size: .7rem;'>2019-09-24</span></div>");
+					var $div1_2 = $("<div class='col-1'><a style='margin-left: 210px;'><i class='fa fa-chevron-down dn2' style='color: black; font-size: 30px;' id='asd'></i></a></div>");
+					
+					var $div2 = $("	<div style='border:0.5px solid #e9e9e9; width:1250px;' id='notice2' class='notice' ></div>");
+					
+					//아이콘 class명으로 if 문 잡고 a태그 this값으로 $div2 어펜드 처리 해주면 됌.
+					$div2.append("<div class='appendNotice' style='height:100%; color: #4f4f4f; padding: 20px 15px; background-color: #e9e9e9; font-size: .8rem; line-height: 1.2rem;'>안녕하세요.<br> 공지사항 입니다. <br>수고하세요.</div>");
+				
+				});
+			
+				
+			}
+		
+		
+		});
+	}
+	
+
+
+</script>	
+	 -->
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+ <script>
 $(document).on("click", ".dn2", function(){
 	console.log("ddd");
 	console.log(this);

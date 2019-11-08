@@ -209,9 +209,10 @@
 
 				</ul>
 			</div>
+			
 		</div>
 	</nav>
-	<div id="filter-drop"></div>
+	
 
 
 

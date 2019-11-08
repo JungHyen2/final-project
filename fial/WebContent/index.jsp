@@ -27,7 +27,15 @@ body{
 p{
 	margin:0px;
 
-} */
+}
+li{
+	font-weight: bold;
+}
+#aDrop:hover{
+	cursor: pointer;
+
+}
+
 .imggg{
     background-size: cover;
     background-position: center center;
@@ -61,6 +69,11 @@ p{
 	transform:scale(1.0);
 	transition:transform .5s;
 }
+.block {border:0px solid #d81f25; padding:0 5px; height:20px; overflow:hidden; background:#fff; width:100px; font-family:Gulim; font-size:12px;}
+.block, #ticker,
+.block li {margin:0; padding:0; list-style:none;}
+.block li a {display:block; height:20px; line-height:20px; color:#555; text-decoration:none; font-size: large;}
+.block li span {padding:3px 5px; background:black; color:#fff; font-weight:bold; margin-right:3px;}
 
 </style>
  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -78,13 +91,34 @@ kkk
 
 	<%@include file="views/includes/header.jsp" %>
 
-	<div class="container eee" style="margin-top:70px;">
+	<div id="filter-drop" style="width:100%;height:50px;margin-top:70px;"></div>
+		<div class="container eee" style="margin-top:18px;">
 	
-		<figure id="banner" style="margin-top: 0px;">
-			<img style="width: 1110px;"
-				src="<%=conPath %>/resources/assets/img/배너삼.jpg" >
-		</figure>
+	
+		<!-- <figure id="banner" style="margin-top: 0px; height:230px;">
+		 -->	
+		 <div style="border:1px solid black; padding:0px; height:230px;" class="form-inline">
+			 <div class="form-group col-9" style="padding:0px;">
+				<img style="width: 820px; height:230px;" src="<%=conPath %>/resources/assets/img/배너삼.jpg" >
+			</div>
+			<div class="form-group col-2 block" style="margin-bottom:191px">
+				<ul id="ticker" style="height: 230px">
+					
+				</ul>
+				<ul id="ticker2"style="height: 230px">
+				</ul>
+			 
+			</div>
+			<div class="form-group col-1" style="margin-bottom:191px">
+				<a href="" id="aDrop"><i class="fa fa-chevron-down" style="color:black;"></i></a>
+							
+			</div>
+		
+		</div>
+			
 
+<!-- 		</figure>
+ -->
 
 		<div class="row" style=" margin-top: 1rem!important">
 			<div class="col-3">
@@ -385,7 +419,10 @@ kkk
 
 	</div>
 	</div>
+
 <script>
+
+
 
 var page = 2;
 
@@ -472,13 +509,13 @@ function man(category){
 	/*filter.css("border: 1px solid black; width: 100%; height: 50px; margin-top: 50px") */
 	filter.append("<i class='fa fa-sliders fa-md' style='color:white; margin-top:10px; margin-left:399px;'>"
 	+"<span style='margin-left:20px;'>"+'필터 - '+sel+'   |   <i class="fa fa-circle" style="color:'+selectC+'"></i>   |   ' +category +" </span>"+"<a class='btn' onclick='on();' style='margin-left:960px;'><i class='fa fa-times fa-md'></i></a>"+"</i>");
-	filter.css({"border":"1px solid black","width":"100%","height":"50px","margin-top":"50px","background":"black"});
+	filter.css({"border":"1px solid black","background":"black"});
 	
 }
 function on(){
 	
 	$("#filter-drop").html("");
-	$("#filter-drop").removeAttr('style');
+	$("#filter-drop").css('background','white').css('border','0px');
 	
 }
 
@@ -487,6 +524,94 @@ function on(){
 	$('#loading').append("<i class='fa fa-spinner fa-pulse fa-fw fa-5x'></i>");
 }); 
 </script>
+
+<script>
+ 	$(function(){
+	//	$("#ticker2").css("display","none");
+		topSearch();
+	});
+	
+	function topSearch(){
+		
+		
+		var $ul = $("#ticker");
+		
+		$.ajax({
+			url:"topSearch",
+			dataType:"json",
+			success:function(data){
+				console.log("성공");
+				$.each(data, function(index, value){
+					
+					$ul.append("<li class='ddd'><a href='#'><span>"+value.rank+"</span>"+value.name+"</a></li>");
+					
+				
+				});
+			},
+			error:function(){
+				console.log("서버통신실패");
+			}
+		});
+		
+	}
+ 
+	function topSearch2(){
+		
+		var $ul = $("#ticker");
+		
+		$.ajax({
+			url:"topSearch",
+			dataType:"json",
+			success:function(data){
+				console.log("성공");
+				$.each(data, function(index, value){
+					
+					$ul.append("<li class='ddd'><a href='#'><span>"+value.rank+"</span>"+value.name+"</a></li>");
+					
+				
+				});
+			},
+			error:function(){
+				console.log("서버통신실패");
+			}
+		});
+		
+	}
+ 
+ 
+ 
+ $(function()
+		 {
+		     var ticker = function()
+		     {
+		         setTimeout(function(){
+		             $('#ticker li:first').animate( {marginTop: '-20px'}, 400, function()
+		             {
+		                 $(this).detach().appendTo('ul#ticker').removeAttr('style');
+		             });
+		             ticker();
+		         }, 3000);
+		     };
+		     ticker();
+		 });
+
+</script>
+<script>
+$('#aDrop').mouseenter(function() {
+	//$(".ddd").remove();
+	$("#ticker").css("display","none");
+	topSearch2();
+});
+$('#aDrop').mouseleave(function() {
+	$("#ticker").css("display","block");
+	topSearch();
+	
+});
+
+
+</script>
+
+
 
 
 		<div id="loading" style="width: 100%; height: 50px; margin-left: 900px;"></div>
