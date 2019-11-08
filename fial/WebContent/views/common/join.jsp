@@ -24,7 +24,7 @@
 						<h1>회원가입</h1>
 						<p>계정을 만들어 스타일 블렌딩을 즐겨보세요.</p>
 					</div>
-					<form>
+					<form action=""  method="post" id="joinForm" onsubmit="return joinValidate();">
 						<div class="form-group">
 							<label for="email">Email address</label>
 							<input type="email" class="form-control" id="email" name="email"
@@ -68,8 +68,73 @@
 
 
 
+	<%-- 가입정보 체크  --%>
+		<script>
+		
+			function joinValidate() {
+				// 각각의 input 요소들 변수에 담아두기 
+				var email = $("#joinForm input[name=email]");
+				var nickname = $("#joinForm input[name=nickname]");
+				var pass = $("#joinForm input[name=pass]");
+				var pass2 = $("#joinForm input[name=pass2]");
+				
+				// 값 다 있나 검사
+				if(email.val().trim() == ""){
+					alert("이메일을 입력해주세요.");
+					email.focus();
+					return false;
+				}else if(nickname.val().trim() == ""){
+					alert("닉네임을 입력해주세요.");
+					nickname.focus();
+					return false;
+				}else if(pass.val().trim() == ""){
+					alert("비밀번호를 입력해주세요.");
+					pass.focus();
+					return false;
+				}else if(pass2.val().trim() == ""){
+					alert("비밀번호를 확인해주세요.");
+					pass2.focus();
+					return false;
+				}
+				
+				// 아이디 형식 검사
+				var regExp = /^[\w]{4,20}@[\w]+(\.[\w]+){1,2}$/;
+				if(!regExp.test(email.val())){
+					alert("이메일이 형식에 맞지 않습니다.")
+					email.val("").focus();
+					return false;
+				}
+				
+				// 닉네임 검사
+				regExp = /^[가-힣a-zA-Z0-9]{3,8}$/;
+				
+				if (!regExp.test(nickName.val())) {
+					alert("닉네임이 형식에 맞지 않습니다.");
+					nickName.val("").focus();
+					return false;
+				}
 
+				// 비밀번호 검사
+				regExp = /^[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+				if (!regExp.test(pass.val())) {
+					alert("비밀번호를 형식에 맞게 입력해주세요.");
+					pass.val("").focus();
+					pass2.val("");
+					return false;
+				}
 
+				
+				if (pass.val() != pass2.val()) {
+					alert("비밀번호가 일치하지 않습니다.");
+					pass2.val("").focus();
+					return false;
+				}
+
+			}
+			
+			
+		</script>
+	
 
 	<%@include file="../includes/footer.jsp" %>
 </body>

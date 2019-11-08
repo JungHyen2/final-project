@@ -28,7 +28,7 @@
 		top: 0;
 		left: 0;
 		bottom: 0;
-		width: 250px;
+		width: 300px;
 		margin: 10px 0 30px 10px;
 		padding: 5px;
 		overflow-y: auto;
@@ -190,6 +190,9 @@
 		cursor: default;
 		color: #777;
 	}
+	#divImg:hover{
+		cursor: pointer;
+	}
 
 	/* 모달 */
 	/* The Modal (background) */
@@ -217,9 +220,8 @@
 		width: 80%;
 	}
 	
-
-
 </style>
+<script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/jquery.placeholder.js"></script>
 </head>
 <body class="profile" style="margin-bottom: 20px !important;">
 	
@@ -227,7 +229,7 @@
 
 	<!-- Page Content -->
 	<div class="container" style="margin-top: 150px; margin-bottom: 70px;">
-
+		<form>
 		<div class="row">
 
 			<!-- 왼쪽 -->
@@ -238,8 +240,8 @@
 
 				<hr>
 				<!-- 이미지 -->
-				<div>
-					<img class="img-fluid rounded" src="http://placehold.it/500x600" alt="">
+				<div class="img" id="divImg" style="width: 500px; height:600px;">
+					<img id="img" width="100%" height="100%" >
 				</div>
 				<!-- 좋아요,신고-->
 				<div>
@@ -254,13 +256,43 @@
 				<textarea rows="10" cols="70" id="content" name="content"
 						placeholder="사진에 대한 내용과 #해시태그는 이 안에 입력해주세요."></textarea>
 
-			
-
-
-
-
 			</div>
+			
+			<!-- 사진업로드 부분 (hidden) -->
+			<div id="fileArea">
+				<input type="file" id="fileImg" name="fileImg" onchange="loadImg(this, 1);"> 
+			</div>
+			
+			<script>
+				// 각 div 클릭할 때 파일 첨부 창이 뜨도록
+				$(function() {
+					$("#fileArea").hide();
+		
+					$("#divImg").click(function() {
+						$("#fileImg").click();
+					});
+				});
+		
+				function loadImg(value, num) {
+		
+					if (value.files && value.files[0]) {
+		
+						// 1. 파일을 읽어들일 FileReader 객체 생성
+						var reader = new FileReader();
+		
+						// 2. 파일 읽기가 다 완료되었을 때 실행되는 메소드
+						reader.onload = function(e) {
+							$("#img").attr("src", e.target.result); // data:URL
 
+						}
+						// 파일 읽기 메소드
+						reader.readAsDataURL(value.files[0]);
+					}
+				}
+
+			</script>
+			
+			
 			<!-- 오른쪽 -->
 			<div class="col-md-5">
 				<!-- 1. 성별 -->
@@ -269,7 +301,7 @@
 						<h5
 							style="display: inline-block; padding-top: 8px; margin-bottom: 0;">성별</h5>
 						&nbsp;&nbsp;
-						<form class="form-group" style="display: inline-block;">
+						<div class="form-group" style="display: inline-block;">
 							<div class="custom-control custom-radio my-2"
 								style="padding-top: 0 !important; display: inline-block;">
 								<input type="radio" id="men" name="gender" value="men"
@@ -282,7 +314,7 @@
 									class="custom-control-input"> <label
 									class="custom-control-label" for="woman">여자</label>
 							</div>
-						</form>
+						</div>
 					</div>
 				</div>
 
@@ -294,8 +326,10 @@
 							<!-- 주소 담길 text  -->
 							<input type="text" class="form-control" name="add" id="add">
 							<!-- 지도버튼  -->
+							<!-- <button type="button" class="btn btn-info" data-toggle="modal"
+								id="addOpenBtn" data-target="#addModal">지도</button> -->
 							<button type="button" class="btn btn-info" data-toggle="modal"
-								id="addOpenBtn" data-target="#addModal">지도</button>
+								id="addOpenBtn" >지도</button>
 						</div>
 					</div>
 				</div>
@@ -313,7 +347,7 @@
 					<div class="card-body" id="addDiv"
 						style="border-radius: 0; border: none; box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
     							transition: transform 800ms cubic-bezier(0.165, 0.84, 0.44, 1); display: inline-block;
-    							margin-right: 10px; margin-left: 10px;">
+    							margin-right: 10px; margin-left: 10px; margin-bottom: 10px;">
 						<!-- 동적 추가 삭제 -->
 						<div>
 							<!-- 1.카테고리 -->
@@ -394,7 +428,7 @@
 							
 							<!-- 3. 컬러 -->
 							<label>컬러</label>
-							<form style="margin: auto; text-align: center;">
+							<div style="margin: auto; text-align: center;">
 							
 							<div style="padding:0; margin: 0px; display: inline-block; width: 28px; height: 28px;">
 								<a id="navy" class="btn bb" style="padding:0; margin: 0px;"> 
@@ -460,7 +494,7 @@
 								</a> 
 							</div>
 							
-							</form>
+							</div>
 							
 						</div> <!-- 동적 div end  -->
 					</div> 	<!-- card-body end -->
@@ -475,16 +509,35 @@
 			            	console.log(addContent);
 			            	
 			                $('#addLocation').append(
-			                	'<br><div class="card-body" id="addDiv" style="border-radius: 0; border: none; box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1); transition: transform 800ms cubic-bezier(0.165, 0.84, 0.44, 1); display: inline-block; margin-right: 10px; margin-left: 10px;"><div><br><div style="display: inline-block; float: right;"><i class="fas fa-times" id="removeDiv"></i></div>' + addContent + '</div>' 
+			                	'<br>'
+			                ).append(
+			                	'<div class="card-body" id="addDiv" style="border-radius: 0; border: none; box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1); transition: transform 800ms cubic-bezier(0.165, 0.84, 0.44, 1); display: inline-block; margin-right: 10px; margin-left: 10px;"><div><br><div style="display: inline-block; float: right;"><button type="button" id="removeDiv" style="cursor: pointer; background-color: transparent; border: none; text-decoration: none;"><i class="fas fa-times"></i></button></div>' + addContent + '</div>' 
+			               	).append(
+			               		'<br>'		
 			               	); // end append    
 			                
-			                $('#removeDiv').on('click', function () { 
-			                    $(this).prev().remove (); // remove the textbox
+			               /*  $('#removeDiv').on('click', function () { 
+			                    $(this).parent().parent().parent().remove (); // remove the textbox
 			                    $(this).next ().remove (); // remove the <br>
 			                    $(this).remove (); // remove the button
-			                });
+			                }); */
 			            }); // end click                                            
-			        }); // end ready        
+			        }); // end ready 
+			        
+			        $(document).on("click", "#removeDiv", function(){
+			        	var removeThis = $("#removeDiv");
+			      
+			        	
+			        	removeThis.parent().parent().parent().prev().remove (); // remove the textbox
+			        	removeThis.parent().parent().parent().remove (); // remove the textbox
+			        	removeThis.next().remove (); // remove the <br>
+			        	removeThis.remove (); // remove the button
+			        
+			        	//$(this).parent().parent().parent().prev().remove (); // remove the textbox
+			        	//$(this).parent().parent().parent().remove (); // remove the textbox
+	                    //$(this).next().remove (); // remove the <br>
+	                    //$(this).remove (); // remove the button
+			        });
 			    </script> 
 			    
 				</div>  <!-- card my-4 end -->
@@ -492,17 +545,31 @@
 			</div>  <!-- col-md-5 -->
 
 		</div>
+		<br><br>
+		<div style="margin-right: auto; margin-left: auto; text-align: center;" class="col-12">
+			<button type="submit" class="btn btn-dark">등록</button> &nbsp;&nbsp;
+			<button type="reset" class="btn btn-outline-dark">취소</button>
+		</div>
 		<!-- /.row -->
-
+		</form>
 	</div>
 	<!-- /.container -->
 	
 	
 	<!----------------------------------------------------- 지도 modal ----------------------------------------------->
-
+	
+	<!-- 모달창 열기 -->
+	<script>
+		$("#addOpenBtn").click(function () {
+			console.log('위치클릭');
+			//$("#addModal").css('height','500px').css('width','800px');
+			$("#addModal").modal('show');
+		});
+	</script>
+	
 	<div class="modal fade" id="addModal" tabindex="-1" role="dialog"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="width: 800px; height: 800px;">
+		<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<!-- <h5 class="modal-title" id="exampleModalLabel">Here is a modal</h5> -->
@@ -520,7 +587,7 @@
 							<div class="option">
 								<div>
 									<form onsubmit="searchPlaces(); return false;">
-										키워드 : <input type="text" value="" id="keyword" size="15">
+										키워드 : <input type="text" value="" id="keyword">
 										<button type="submit">검색하기</button>
 									</form>
 								</div>
@@ -538,23 +605,25 @@
 			</div>
 		</div>
 	</div>
+	
+
+	<!-- 지도api -->
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8ef4b8fd4aebaa69e9172f4cc49921ca&libraries=services"></script>
 	<script>
 		$("#addSelectBtn").click(function () {
 			$('#addModal').modal("hide");
 		});
+		
+		
 	</script>
 	
 	<script>
+
 		// 마커를 담을 배열입니다
 		kakao.maps.disableHD();
 		
 		var markers = [];
 		var map;
-		
-		setTimeout(function(){ 
-			map.relayout(); }, 0.01
-		);
 
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		mapOption = {
@@ -565,7 +634,13 @@
 
 		// 지도를 생성합니다    
 		map = new kakao.maps.Map(mapContainer, mapOption);
+		
+		
+		setTimeout(function(){ 
+			map.relayout(); }, 0.01
+		);
 
+		
 		// 장소 검색 객체를 생성합니다
 		var ps = new kakao.maps.services.Places();
 
@@ -604,15 +679,16 @@
 				
 				console.log(data);
 				
+				/* 해당 주소 가져오는 코드 */
 				$("#placesList li").click(function () {
+					$(this).css('background-color','#dee2e6');
+					
 					var add = $(this).children('.info').children().eq(1).text();
 					
 					console.log(this);
 					console.log(add);
 					$("#add").val(add);
 				});
-				
-				
 				
 
 			} else if (status === kakao.maps.services.Status.ZERO_RESULT) {
@@ -788,6 +864,8 @@
 				el.removeChild(el.lastChild);
 			}
 		}
+
+		
 	</script>
 	
 	<%@include file="../includes/footer.jsp" %>
